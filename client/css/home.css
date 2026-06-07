@@ -1,0 +1,549 @@
+/* Применяет box-sizing: border-box ко всем элементам внутри .desktop, чтобы padding и border не увеличивали размеры элементов */ /* Комментарий: правило для box-sizing в desktop */
+.desktop, /* Селектор для desktop */
+.desktop * { /* Селектор для всех потомков desktop */
+  box-sizing: border-box; /* Устанавливает box-sizing для правильного расчёта размеров */
+}
+
+/* Сбрасывает отступы и задаёт полный размер для body и html, убирает скролл */ /* Комментарий: сброс стилей для body и html */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+a { /* Селектор для всех ссылок */
+  text-decoration: none; /* Убирает подчеркивание ссылок */
+  color: #dcdcdc; /* Устанавливает цвет ссылок */
+}
+
+.desktop {
+  background: #1e1e1e;
+  height: 2800px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Кнопка "вход": белый текст, позиционирование */
+.sign-in {
+  color: #ffffff; /* Цвет текста */
+  text-align: center; /* Выравнивание текста по центру */
+  font-family: Cruinn; /* Шрифт */
+  font-size: 24px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  position: absolute; /* Абсолютное позиционирование */
+  right: 46px; /* Отступ справа */
+  top: 40px; /* Отступ сверху */
+  width: 69px; /* Ширина */
+  height: 23px; /* Высота */
+  cursor: pointer; /* Курсор указателя */
+  transition: all 0.3s ease; /* Плавные переходы */
+  display: flex; /* Флекс-контейнер */
+  align-items: center; /* Центрирование по вертикали */
+  justify-content: center; /* Центрирование по горизонтали */
+}
+
+.sign-in:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+  transform: scale(1.1); /* Легкое увеличение */
+}
+
+/* Кнопка "регистрация": белый текст, позиционирование */
+.sign-up {
+  color: #ffffff; /* Цвет текста */
+  text-align: center; /* Выравнивание текста по центру */
+  font-family: Cruinn; /* Шрифт */
+  font-size: 24px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  position: absolute; /* Абсолютное позиционирование */
+  right: 120px; /* Отступ справа */
+  top: 40px; /* Отступ сверху */
+  width: 161px; /* Ширина */
+  height: 23px; /* Высота */
+  cursor: pointer; /* Курсор указателя */
+  transition: all 0.3s ease; /* Плавные переходы */
+  display: flex; /* Флекс-контейнер */
+  align-items: center; /* Центрирование по вертикали */
+  justify-content: center; /* Центрирование по горизонтали */
+}
+
+.sign-up:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+  transform: scale(1.1); /* Легкое увеличение */
+}
+
+/* Main title */ /* Комментарий: главный заголовок */
+.main-title {
+  position: absolute;
+  top: 620px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  font-family: Dmitrieva SP, serif;
+  font-size: 260px;
+  color: #dcdcdc;
+  text-align: center;
+  white-space: nowrap;
+}
+
+
+ /* Комментарий: главное изображение */
+.comet-image { /* Селектор для comet-image */
+  width: 750px; /* Ширина */
+  height: 750px; /* Высота */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 1100px; /* Левый отступ */
+  top: 460px; /* Верхний отступ */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(142.479deg); /* Поворот */
+  object-fit: cover; /* Обрезка изображения */
+}
+
+/* Sidebar text */ /* Комментарий: текст боковой панели */
+.progress-description { /* Селектор для progress-description */
+  color: #dcdcdc; /* Цвет текста светло-серый */
+  text-align: right; /* Выравнивание по правому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 68px; /* Размер шрифта */
+  font-weight: 400; /* Толщина шрифта */
+  position: absolute; /* Абсолютное позиционирование */
+  right: 150px; /* Правый отступ */
+  top: 420px; /* Верхний отступ */
+  width: auto; /* Ширина */
+  height: auto; /* Высота */
+}
+
+
+
+ /* Комментарий: описание функций */
+.features-description { 
+  color: #ffffff; /* Цвет текста белый */
+  text-align: left; /* Выравнивание по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 60px; /* Размер шрифта */
+  font-weight: 400; /* Толщина шрифта */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 157px; /* Левый отступ */
+  top: 1090px; /* Верхний отступ */
+  width: auto; /* Ширина */
+  height: 200px; /* Высота */
+}
+
+/* Stars */ /* Комментарий: звёзды */
+.star1 { /* Селектор для star1 */
+  width: 22px; /* Ширина */
+  height: 22px; /* Высота */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 120px; /* Левый отступ */
+  top: 1113px; /* Верхний отступ */
+  overflow: visible; /* Видимость переполнения */
+}
+.star2 { /* Селектор для star2 */
+  width: 22px; /* Ширина */
+  height: 22px; /* Высота */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 120px; /* Левый отступ */
+  top: 1176px; /* Верхний отступ */
+  overflow: visible; /* Видимость переполнения */
+}
+.star3 { /* Селектор для star3 */
+  width: 22px; /* Ширина */
+  height: 22px; /* Высота */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 120px; /* Левый отступ */
+  top: 1240px; /* Верхний отступ */
+  overflow: visible; /* Видимость переполнения */
+}
+.star4 { /* Селектор для star4 */
+  width: 22px; /* Ширина */
+  height: 22px; /* Высота */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 120px; /* Левый отступ */
+  top: 1302px; /* Верхний отступ */
+  overflow: visible; /* Видимость переполнения */
+}
+
+/* Character avatar */ /* Комментарий: аватар персонажа */
+.character-avatar { /* Селектор для character-avatar */
+  border-radius: 20px; /* Скругление углов */
+  border: 2px solid rgba(120, 0, 2, 0.5); /* Граница */
+  width: 300px; /* Ширина */
+  height: 300px; /* Высота */
+  position: absolute; /* Абсолютное позиционирование */
+  right: 300px; /* Правый отступ */
+  top: 1070px; /* Верхний отступ */
+  object-fit: cover; /* Обрезка изображения */
+}
+
+
+
+
+/* Комета 1: изображение, абсолютное позиционирование, поворот и масштабирование */
+.comet-1 {
+  width: 180px; /* Ширина */
+  height: 180px; /* Высота */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 210px; /* Отступ слева */
+  top: 1490px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(90.437deg) scale(1, 1); /* Поворот и масштаб */
+  object-fit: cover; /* Заполнение контейнера */
+  aspect-ratio: 131.42/153.14; /* Соотношение сторон */
+  cursor: pointer; /* Курсор указателя */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.comet-1:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+  transform: rotate(90.437deg) scale(1.1, 1.1); /* Легкое увеличение */
+}
+
+/* Иконка 2: изображение, абсолютное позиционирование */
+.comet-2 {
+  width: 160px; /* Ширина */
+  height: 160px; /* Высота */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 280px; /* Отступ слева */
+  top: 1520px; /* Отступ сверху */
+  object-fit: cover; /* Заполнение контейнера */
+  aspect-ratio: 104/99; /* Соотношение сторон */
+  cursor: pointer; /* Курсор указателя */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.comet-2:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+  transform: scale(1.1); /* Легкое увеличение */
+}
+
+/* Иконка 3: изображение, абсолютное позиционирование, поворот */
+.comet-3 {
+  width: 180px; /* Ширина */
+  height: 180px; /* Высота */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 650px; /* Отступ слева */
+  top: 1430px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(67.726deg) scale(1, 1); /* Поворот и масштаб */
+  object-fit: cover; /* Заполнение контейнера */
+  aspect-ratio: 117.69/111.98; /* Соотношение сторон */
+  cursor: pointer; /* Курсор указателя */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.comet-3:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+  transform: rotate(67.726deg) scale(1.1, 1.1); /* Легкое увеличение */
+}
+
+/* Иконка 4: изображение, абсолютное позиционирование */
+.comet-4 {
+  width: 160px; /* Ширина */
+  height: 160px; /* Высота */
+  position: absolute; /* Абсолютное позиционирование */
+  right: 880px; /* Отступ справа */
+  top: 1520px; /* Отступ сверху */
+  object-fit: cover; /* Заполнение контейнера */
+  aspect-ratio: 127/116; /* Соотношение сторон */
+  cursor: pointer; /* Курсор указателя */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.comet-4:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+  transform: scale(1.1); /* Легкое увеличение */
+}
+
+/* Комета 5: изображение, абсолютное позиционирование */
+.comet-5 {
+  width: 200px; /* Ширина */
+  height: 200px; /* Высота */
+  position: absolute; /* Абсолютное позиционирование */
+  right: 580px; /* Отступ справа */
+  top: 1480px; /* Отступ сверху */
+  object-fit: cover; /* Заполнение контейнера */
+  aspect-ratio: 154/128; /* Соотношение сторон */
+  cursor: pointer; /* Курсор указателя */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.comet-5:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+  transform: scale(1.1); /* Легкое увеличение */
+}
+
+/* Иконка 6: изображение, абсолютное позиционирование */
+.comet-6 {
+  width: 180px; /* Ширина */
+  height: 180px; /* Высота */
+  position: absolute; /* Абсолютное позиционирование */
+  right: 355px; /* Отступ справа */
+  top: 1510px; /* Отступ сверху */
+  object-fit: cover; /* Заполнение контейнера */
+  aspect-ratio: 146/121; /* Соотношение сторон */
+  cursor: pointer; /* Курсор указателя */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.comet-6:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+  transform: scale(1.1); /* Легкое увеличение */
+}
+
+/* Комета 7: изображение, абсолютное позиционирование, поворот */
+.comet-7 {
+  width: 180px; /* Ширина */
+  height: 180px; /* Высота */
+  position: absolute; /* Абсолютное позиционирование */
+  right: 60px; /* Отступ справа */
+  top: 1540px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(-23.147deg) scale(1, 1); /* Поворот и масштаб */
+  object-fit: cover; /* Заполнение контейнера */
+  aspect-ratio: 137.51/127.78; /* Соотношение сторон */
+  cursor: pointer; /* Курсор указателя */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.comet-7:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+  transform: rotate(-23.147deg) scale(1.1, 1.1); /* Легкое увеличение */
+}
+
+
+
+
+/* Название курса: полупрозрачный текст, центрирование, абсолютное позиционирование */
+.course-name {
+  color: #dcdcdc; /* Цвет текста с прозрачностью */
+  text-align: center; /* Выравнивание текста по центру */
+  font-family: Cruinn; /* Шрифт */
+  font-size: 40px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  position: absolute; /* Абсолютное позиционирование */
+  display: flex; /* Флекс-контейнер */
+  align-items: center; /* Центрирование по вертикали */
+  justify-content: center; /* Центрирование по горизонтали */
+  cursor: pointer; /* Курсор указателя */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.course-name:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+  transform: scale(1.05); /* Легкое увеличение */
+}
+
+/* Tooltip для course-name элементов */
+.course-name[data-tooltip]:hover::after {
+  content: attr(data-tooltip); /* Отображение текста из атрибута data-tooltip */
+  position: absolute; /* Абсолютное позиционирование */
+  bottom: 120%; /* Расположение над элементом */
+  left: 50%; /* Центрирование по горизонтали */
+  transform: translateX(-50%); /* Сдвиг на половину собственной ширины */
+  background-color: #1e1e1e; /* Тёмный фон */
+  color: #dcdcdc; /* Светло-серый текст */
+  padding: 12px 16px; /* Внутренние отступы */
+  border-radius: 10px; /* Скругление углов */
+  border: 1px solid #dcdcdc; /* Светло-серая рамка */
+  font-size: 14px; /* Размер шрифта */
+  font-family: Cruinn; /* Шрифт */
+  white-space: nowrap; /* Запретить перенос текста */
+  z-index: 1000; /* Высокий z-index для отображения над другими элементами */
+  pointer-events: none; /* Не мешать взаимодействию с другими элементами */
+  width: 300px; /* Ширина tooltip */
+  text-align: center; /* Выравнивание текста */
+  white-space: normal; /* Разрешить перенос текста */
+  line-height: 1.4; /* Высота строки */
+}
+
+/* Блок "HTML": позиционирование, белый текст */
+.html {
+  color: #dcdcdc; /* Цвет текста */
+  left: 96px; /* Отступ слева */
+  top: 1750px; /* Отступ сверху */
+  width: 128px; /* Ширина */
+  height: 60px; /* Высота */
+  font-size: 36px; /* Размер шрифта */
+}
+
+/* Блок "CSS": позиционирование */
+.css {
+  left: 350px; /* Отступ слева */
+  top: 1738px; /* Отступ сверху */
+  width: 103px; /* Ширина */
+  height: 60px; /* Высота */
+}
+
+/* Блок "JavaScript": позиционирование */
+.javascript {
+  left: 605px; /* Отступ слева */
+  top: 1776px; /* Отступ сверху */
+  width: 219px; /* Ширина */
+  height: 60px; /* Высота */
+}
+
+/* Блок "TypeScript": позиционирование */
+.typescript {
+  left: 910px; /* Отступ слева */
+  top: 1745px; /* Отступ сверху */
+  width: 214px; /* Ширина */
+  height: 60px; /* Высота */
+}
+
+/* Блок "React": позиционирование */
+.react {
+  right: 555px; /* Отступ справа */
+  top: 1753px; /* Отступ сверху */
+  width: 136px; /* Ширина */
+  height: 60px; /* Высота */
+}
+
+/* Блок "Vue.js": позиционирование */
+.vue {
+  right: 300px; /* Отступ справа */
+  top: 1737px; /* Отступ сверху */
+  width: 126px; /* Ширина */
+  height: 60px; /* Высота */
+}
+
+/* Блок "Angular": позиционирование */
+.angular {
+  right: 100px; /* Отступ справа */
+  top: 1763px; /* Отступ сверху */
+  width: 150px; /* Ширина */
+  height: 60px; /* Высота */
+}
+
+
+
+/* Линия: стиль границы, абсолютное позиционирование, поворот */
+.line {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(90deg) scale(1, 1); /* Поворот и масштаб */
+}
+
+/* Линия 1: ширина, позиционирование */
+.line-1 {
+  width: 109px; /* Ширина */
+  left: 100px; /* Отступ слева */
+  top: 1675px; /* Отступ сверху */
+}
+
+/* Линия 2: ширина, позиционирование */
+.line-2 {
+  width: 77px; /* Ширина */
+  left: 350px; /* Отступ слева */
+  top: 1691px; /* Отступ сверху */
+}
+
+/* Линия 3: ширина, позиционирование */
+.line-3 {
+  width: 154px; /* Ширина */
+  left: 600px; /* Отступ слева */
+  top: 1642px; /* Отступ сверху */
+}
+
+/* Линия 4: ширина, позиционирование */
+.line-4 {
+  width: 77px; /* Ширина */
+  left: 900px; /* Отступ слева */
+  top: 1691px; /* Отступ сверху */
+}
+
+/* Линия 5: ширина, позиционирование справа */
+.line-5 {
+  width: 95px; /* Ширина */
+  right: 600px; /* Отступ справа */
+  top: 1672px; /* Отступ сверху */
+}
+
+/* Линия 6: ширина, позиционирование справа */
+.line-6 {
+  width: 77px; /* Ширина */
+  right: 360px; /* Отступ справа */
+  top: 1691px; /* Отступ сверху */
+}
+
+/* Линия 7: ширина, позиционирование справа */
+.line-7 {
+  width: 109px; /* Ширина */
+  right: -10px; /* Отступ справа */
+  top: 1675px; /* Отступ сверху */
+}
+
+/* Линия 8: горизонтальная линия, позиционирование */
+.line-8 {
+  right: 100px; /* Отступ справа */
+  left: 100px; /* Отступ слева */
+  top: 1730px; /* Отступ сверху */
+  transform: none; /* Без трансформации */
+}
+
+
+
+
+
+
+
+
+/* Call to action */ /* Комментарий: призыв к действию */
+.start-learning { /* Селектор для start-learning */
+  color: #dcdcdc; /* Цвет текста светло-серый */
+  text-align: center; /* Выравнивание по центру */
+  font-family: "Dmitrieva Sp"; /* Шрифт */
+  font-size: 210px; /* Размер шрифта */
+  font-weight: 400; /* Толщина шрифта */
+  position: absolute; /* Абсолютное позиционирование */
+  top: 2000px; /* Верхний отступ */
+  width: 100%; /* Ширина */
+  height: auto; /* Высота */
+}
+
+.login-bottom {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Cruinn";
+  font-size: 48px;
+  font-weight: 400;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 2490px;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-bottom:hover {
+  opacity: 0.7;
+  transform: translateX(-50%) scale(1.1);
+}
+
+.register-bottom {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Cruinn";
+  font-size: 48px;
+  font-weight: 400;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 2580px;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.register-bottom:hover {
+  opacity: 0.7;
+  transform: translateX(-50%) scale(1.1);
+}

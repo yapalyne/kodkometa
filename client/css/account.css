@@ -1,0 +1,632 @@
+/* Глобальные стили */
+.desktop, /* Селектор для класса desktop и всех его потомков */
+.desktop * { /* Применяет стили ко всем элементам внутри desktop */
+  box-sizing: border-box; /* Включает border и padding в расчет ширины и высоты */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+a { /* Стили для всех ссылок */
+  text-decoration: none; /* Убирает подчеркивание */
+  color: #dcdcdc; /* цвет */
+}
+
+.desktop {
+  background: #1e1e1e;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Компоненты карточек */
+.card__header-box { /* Стили для заголовочной коробки карточки */
+  background: #dcdcdc; /* Светлый фон */
+  border: 2px dashed #780002; /* Пунктирная граница красного цвета */
+  border-radius: 20px; /* Закругленные углы */
+  width: 760px; /* Ширина */
+  height: 180px; /* Высота */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 60px;
+  top: 140px; /* Отступ сверху */
+}
+
+.card__main-box {
+
+  background: #1e1e1e;
+  border: 1px solid #dcdcdc;
+  border-radius: 20px;
+
+  width: 800px;
+  height: 800px;
+
+  position: absolute;
+  right: 50px;
+  top: 140px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+}
+
+.card__image {
+
+  width: 800px;
+  height: 800px;
+
+  object-fit: contain;
+
+}
+
+.card__title { /* Стили для заголовка карточки */
+  color: #dcdcdc; /* Светлый цвет текста */
+  font-family: "Dmitrieva Sp"; /* Шрифт */
+  font-size: 48px; /* Размер шрифта */
+  font-weight: 400; /* Толщина шрифта */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 90px; /* Отступ слева */
+  top: 68px; /* Отступ сверху */
+  width: 318px; /* Ширина */
+  height: 40px; /* Высота */
+  text-align: left; /* Выравнивание текста по левому краю */
+  cursor: pointer; /* Курсор указателя */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.card__title:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+  transform: scale(1.1); /* Легкое увеличение */
+}
+
+/* Навигация заголовка */
+.header__logout { /* Стили для кнопки выхода */
+  color: #ffffff; /* Белый цвет текста */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 24px; /* Размер шрифта */
+  font-weight: 400; /* Толщина шрифта */
+  position: absolute; /* Абсолютное позиционирование */
+  right: 40px; /* Отступ справа */
+  top: 40px; /* Отступ сверху */
+  width: 82px; /* Ширина */
+  height: 23px; /* Высота */
+  text-align: center; /* Выравнивание текста по центру */
+  cursor: pointer; /* Курсор указателя */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.header__logout:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+  transform: scale(1.1); /* Легкое увеличение */
+}
+
+.header__course { /* Стили для ссылки на курс */
+  color: #ffffff; /* Белый цвет текста */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 24px; /* Размер шрифта */
+  font-weight: 400; /* Толщина шрифта */
+  position: absolute; /* Абсолютное позиционирование */
+  right: 129px; /* Отступ справа */
+  top: 40px; /* Отступ сверху */
+  width: 68px; /* Ширина */
+  height: 23px; /* Высота */
+  text-align: center; /* Выравнивание текста по центру */
+  cursor: pointer; /* Курсор указателя */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.header__course:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+  transform: scale(1.1); /* Легкое увеличение */
+}
+
+/* Метки информации карточки */
+.card__level-label {
+  color: #1e1e1e;
+  font-family: "Cruinn";
+  font-size: 30px;
+  font-weight: 400;
+  position: absolute;
+  left: 50px;
+  top: 25px;
+  width: 260px;
+  text-align: left;
+}
+
+.card__level-label:hover {
+  opacity: 0.9; /* Прозрачность при наведении */
+}
+
+.card__stars-label {
+  color: #1e1e1e;
+  font-family: "Cruinn";
+  font-size: 30px;
+  font-weight: 500;
+  position: absolute;
+  left: 300px;
+  top: 25px;
+  width: 300px;
+  text-align: left;
+}
+
+.card__strike-label {
+  color: #1e1e1e;
+  font-family: "Cruinn";
+  font-size: 30px;
+  font-weight: 400;
+  position: absolute;
+  left: 50px;
+  top: 125px;
+  width: 260px;
+  text-align: left;
+}
+
+.card__strike-label:hover {
+  opacity: 0.9; /* Прозрачность при наведении */
+}
+
+.card__days-label {
+  color: #1e1e1e;
+  font-family: "Cruinn";
+  font-size: 30px;
+  font-weight: 500;
+  position: absolute;
+  left: 300px;
+  top: 125px;
+  width: 200px;
+  text-align: left;
+}
+
+/* Полоса прогресса для уровня (0) */
+.progress__track { /* Стили для трека прогресса */
+  background: #a2a2a2; /* Серый фон */
+  border-radius: 8px; /* Закругленные углы */
+  width: 650px; /* Ширина */
+  height: 30px; /* Высота */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 50px; /* Отступ слева для центрирования */
+  top: 75px; /* Отступ сверху для центрирования */
+}
+
+.progress__filled {
+
+  background: #780002;
+
+  border-radius: 8px;
+
+  width: 0%;
+
+  height: 30px;
+
+  position: absolute;
+
+  left: 50px;
+
+  top: 75px;
+
+  transition: 0.5s;
+
+}
+
+/* Метки навыков */
+.skill__label { /* Базовые стили для меток навыков */
+  color: #dcdcdc; /* Светлый цвет текста */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 32px; /* Размер шрифта */
+  font-weight: 400; /* Толщина шрифта */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 90px; /* Отступ слева */
+  width: auto; /* Ширина */
+  height: 30px; /* Высота */
+  display: flex; /* Flexbox для центрирования */
+  align-items: center; /* Центрирование по вертикали */
+  justify-content: center; /* Центрирование по горизонтали */
+  cursor: pointer; /* Курсор указателя */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.skill__label:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+  transform: scale(1.1); /* Легкое увеличение */
+}
+
+.skill__label--html { /* Специфические стили для HTML */
+  top: 355px; /* Отступ сверху */
+}
+
+.skill__label--css { /* Специфические стили для CSS */
+  top: 448px; /* Отступ сверху */
+}
+
+.skill__label--js { /* Специфические стили для JS */
+  top: 542px; /* Отступ сверху */
+}
+
+.skill__label--ts { /* Специфические стили для TS */
+  top: 635px; /* Отступ сверху */
+}
+
+.skill__label--react { /* Специфические стили для React */
+  top: 728px; /* Отступ сверху */
+}
+
+.skill__label--vue { /* Специфические стили для Vue */
+  top: 822px; /* Отступ сверху */
+}
+
+.skill__label--angular { /* Специфические стили для Angular */
+  top: 915px; /* Отступ сверху */
+}
+
+/* Полосы прогресса для навыков */
+.progress { /* Базовые стили для полос прогресса */
+  border-radius: 8px; /* Закругленные углы */
+  width: 520px; /* Ширина */
+  height: 30px; /* Высота */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 270px; /* Отступ слева */
+  display: flex; /* Flexbox */
+  align-items: center; /* Центрирование по вертикали */
+  justify-content: flex-end; /* Выравнивание по правому краю */
+}
+
+.progress--html {
+  background: rgba(162, 162, 162, 0.05);
+  top: 350px;
+  overflow: hidden;
+}
+
+.progress__fill-html {
+  background: #780002;
+  width: 0%;
+  height: 100%;
+  border-radius: 8px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.5s;
+}
+
+.progress__fill-css {
+  background: #780002;
+  width: 0%;
+  height: 100%;
+  border-radius: 8px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.5s;
+}
+
+.progress--css {
+  background: rgba(162, 162, 162, 0.05);
+  top: 443px;
+  overflow: hidden;
+}
+
+
+.progress--js {
+
+  background: rgba(162, 162, 162, 0.05);
+
+  top: 537px;
+
+  overflow: hidden;
+
+}
+
+.progress__fill-js {
+
+  background: #780002;
+
+  width: 0%;
+
+  height: 100%;
+
+  border-radius: 8px;
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  transition: 0.5s;
+
+}
+
+.progress--ts {
+
+  background: rgba(162, 162, 162, 0.05);
+
+  top: 630px;
+
+  overflow: hidden;
+
+}
+
+.progress__fill-ts {
+
+  background: #780002;
+
+  width: 0%;
+
+  height: 100%;
+
+  border-radius: 8px;
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  transition: 0.5s;
+
+}
+
+.progress--react { /* Стили для прогресса React */
+  background: rgba(162, 162, 162, 0.05); /* Полупрозрачный серый фон */
+  top: 723px; /* Отступ сверху */
+  overflow: hidden;
+}
+
+.progress__fill-react {
+
+  background: #780002;
+
+  width: 0%;
+
+  height: 100%;
+
+  border-radius: 8px;
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  transition: 0.5s;
+
+}
+
+.progress--vue {
+
+  background: rgba(162, 162, 162, 0.05);
+
+  top: 817px;
+
+  overflow: hidden;
+
+}
+
+.progress__fill-vue {
+
+  background: #780002;
+
+  width: 0%;
+
+  height: 100%;
+
+  border-radius: 8px;
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  transition: 0.5s;
+
+}
+
+.progress--angular {
+
+  background: rgba(162, 162, 162, 0.05);
+
+  top: 910px;
+
+  overflow: hidden;
+
+}
+
+.progress__fill-angular {
+
+  background: #780002;
+
+  width: 0%;
+
+  height: 100%;
+
+  border-radius: 8px;
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  transition: 0.5s;
+
+}
+
+/* Текст прогресса */
+.progress__text { /* Стили для текста прогресса */
+  color: #ffffff; /* Белый цвет текста */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 24px; /* Размер шрифта */
+  font-weight: 400; /* Толщина шрифта */
+  text-align: right; /* Выравнивание текста по правому краю */
+}
+
+/* Модальное окно курса */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(30, 30, 30, 0.65);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 1000;
+}
+
+.modal--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+}
+
+.modal__window {
+  position: relative;
+  background: #1e1e1e;
+  border: 2px dashed #780002;
+  border-radius: 24px;
+  width: min(92%, 760px);
+  max-height: 90vh;
+  padding: 28px 32px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  border: none;
+  background: rgba(220, 220, 220, 0.12);
+  color: #dcdcdc;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.modal__close-btn:hover {
+  background: rgba(220, 220, 220, 0.2);
+  transform: scale(1.05);
+}
+
+.modal__header {
+  margin-bottom: 20px;
+}
+
+.modal__title {
+  color: #dcdcdc;
+  font-family: "Dmitrieva Sp";
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.modal__summary {
+  color: #dcdcdc;
+  font-family: "Cruinn";
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.modal__body {
+  display: grid;
+  gap: 14px;
+}
+
+.modal__item {
+  background: rgba(220, 220, 220, 0.05);
+  border: 1px solid rgba(220, 220, 220, 0.1);
+  border-radius: 18px;
+  padding: 16px 18px;
+}
+
+.modal__item-title {
+  color: #ffffff;
+  font-family: "Cruinn";
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.modal__item-text {
+  color: #dcdcdc;
+  font-family: "Cruinn";
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.modal__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.modal__list-item {
+  background: rgba(120, 0, 2, 0.12);
+  border-radius: 14px;
+  padding: 14px 16px;
+  color: #dcdcdc;
+  font-family: "Cruinn";
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal__list-item span:last-child {
+  opacity: 0.9;
+}
+
+.modal__label {
+  display: inline-block;
+  margin-top: 10px;
+  color: #dcdcdc;
+  font-family: "Cruinn";
+  font-size: 18px;
+}
+
+/* Групповые макеты */
+.group__overlay { /* Стили для наложения группы */
+  position: absolute; /* Абсолютное позиционирование */
+  inset: 0; /* Заполняет весь контейнер */
+}
+
+.group__items { /* Стили для элементов группы */
+  width: 240px; /* Ширина */
+  height: 30px; /* Высота */
+}
+
+.progress__overall-text {
+
+  position: absolute;
+
+  top: 77px;
+
+  right: 60px;
+
+  color: #1e1e1e;
+
+  font-size: 30px;
+
+  font-family: "Cruinn";
+
+}
+
+

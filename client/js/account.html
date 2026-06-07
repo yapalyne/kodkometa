@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <title>Мой аккаунт</title>
+  <link rel="stylesheet" href="../css/common.css" />
+  <link rel="stylesheet" href="../css/account.css"/>
+</head>
+<body>
+<div class="desktop desktop--scale-adaptive">
+
+    <div class="card__main-box">
+
+        <video
+          id="character-image"
+          class="card__image"
+          autoplay
+          muted
+          loop
+          playsinline
+        >
+
+          <source
+            src=""
+            type="video/mp4"
+          >
+
+        </video>
+
+    </div>
+
+    <div class="card__header-box">
+
+        <div class="card__level-label">
+          стадия эволюции:
+        </div>
+
+        <div
+          id="evolution-stage"
+          class="card__stars-label"
+        >
+        </div>
+
+        <div class="card__strike-label">
+          период свечения:
+        </div>
+
+        <div
+          id="days-count"
+          class="card__days-label">
+        </div>
+
+        <div class="progress__track"></div>
+
+        <div
+          id="overall-progress-fill"
+          class="progress__filled">
+        </div>
+
+        <div
+          id="overall-progress-text"
+          class="progress__overall-text">
+          0%
+        </div>
+
+    </div>
+
+    <div class="progress progress--html">
+
+      <div
+      id="html-progress-fill"
+      class="progress__fill-html">
+    </div>
+
+    <div
+      id="html-progress-text"
+      class="progress__text">
+      0%
+    </div>
+
+    </div>
+    
+    <div class="progress progress--css">
+
+  <div
+    id="css-progress-fill"
+    class="progress__fill-css">
+  </div>
+
+  <div
+    id="css-progress-text"
+    class="progress__text">
+    0%
+  </div>
+
+</div>
+
+
+   <div class="progress progress--js">
+
+  <div
+    id="js-progress-fill"
+    class="progress__fill-js">
+  </div>
+
+  <div
+    id="js-progress-text"
+    class="progress__text">
+    0%
+  </div>
+
+</div>
+
+<div class="progress progress--ts">
+
+  <div
+    id="ts-progress-fill"
+    class="progress__fill-ts">
+  </div>
+
+  <div
+    id="ts-progress-text"
+    class="progress__text">
+    0%
+  </div>
+
+</div>
+
+<div class="progress progress--react">
+
+  <div
+    id="react-progress-fill"
+    class="progress__fill-react">
+  </div>
+
+  <div
+    id="react-progress-text"
+    class="progress__text">
+    0%
+  </div>
+
+</div>
+  
+   <div class="progress progress--vue">
+
+  <div
+    id="vue-progress-fill"
+    class="progress__fill-vue">
+  </div>
+
+  <div
+    id="vue-progress-text"
+    class="progress__text">
+    0%
+  </div>
+
+</div>
+
+<div class="progress progress--angular">
+
+  <div
+    id="angular-progress-fill"
+    class="progress__fill-angular">
+  </div>
+
+  <div
+    id="angular-progress-text"
+    class="progress__text">
+    0%
+  </div>
+
+</div>
+
+    <div class="header__logout"><a href="home.html">выход</a></div>
+    <div class="header__course"><a href="kurs.html">курс</a></div>
+    <div
+      id="username"
+      class="card__title">
+    </div>
+    
+  <div class="skill__label skill__label--html" role="button" tabindex="0" data-course="html">HTML</div>
+  <div class="skill__label skill__label--css" role="button" tabindex="0" data-course="css">CSS</div>
+  <div class="skill__label skill__label--js" role="button" tabindex="0" data-course="js">JS</div>
+  <div class="skill__label skill__label--ts" role="button" tabindex="0" data-course="ts">TS</div>
+  <div class="skill__label skill__label--react" role="button" tabindex="0" data-course="react">REACT</div>
+  <div class="skill__label skill__label--vue" role="button" tabindex="0" data-course="vue">VUE.JS</div>
+  <div class="skill__label skill__label--angular" role="button" tabindex="0" data-course="angular">ANGULAR</div>
+
+</div>
+
+<div id="course-modal" class="modal" aria-hidden="true">
+  <div class="modal__overlay" data-close="true"></div>
+  <div class="modal__window" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal__close-btn" type="button" data-close="true">✕</button>
+    <div class="modal__header">
+      <div id="modal-title" class="modal__title">Курс</div>
+      <div id="modal-summary" class="modal__summary"></div>
+    </div>
+    <div id="modal-body" class="modal__body"></div>
+  </div>
+</div>
+
+<script>
+let accountProgress = [];
+
+let cssProgress = [];
+
+let jsProgress = [];
+
+let tsProgress = [];
+
+let reactProgress = [];
+
+let vueProgress = [];
+
+let angularProgress = [];
+
+const cssTopics = [
+  'Основы CSS',
+  'Селекторы',
+  'Бокс-модель',
+  'Флексбокс',
+  'Гриды',
+  'Цвета и фон',
+  'Текст и шрифты',
+  'Анимации',
+  'Трансформации',
+  'Переходы',
+  'Медиа-запросы',
+  'Адаптивный дизайн',
+  'Современные возможности'
+];
+
+const htmlTopics = [
+  'Основы',
+  'Метаинформация',
+  'Семантика',
+  'Формы и ввод данных',
+  'Медиаконтент',
+  'Таблицы',
+  'Списки',
+  'Ссылки',
+  'Доступность',
+  'Оптимизация и SEO',
+  'Расширенные возможности',
+  'Инструменты и валидация',
+  'Совместимость и стандарты'
+];
+
+const jsTopics = [
+
+  'Основы JS',
+  'Переменные',
+  'Управление потоком',
+  'Функции',
+  'Массивы',
+  'Объекты',
+  'DOM',
+  'События',
+  'Асинхронность',
+  'Модули',
+  'Классы',
+  'Браузерные API',
+  'Продвинутые темы'
+
+];
+
+const tsTopics = [
+
+  'Основы TS',
+  'Типы данных',
+  'Функции',
+  'Объекты и интерфейсы',
+  'Массивы и Tuple',
+  'Generics',
+  'Классы',
+  'Наследование',
+  'Модули',
+  'Асинхронность',
+  'Работа с DOM',
+  'TS + React',
+  'Продвинутый TS'
+
+];
+
+const reactTopics = [
+
+  'Основы React',
+  'JSX',
+  'Компоненты',
+  'Props',
+  'State',
+  'Hooks',
+  'Events',
+  'Forms',
+  'API',
+  'Router',
+  'Context',
+  'Оптимизация',
+  'Production React'
+
+];
+
+const vueTopics = [
+
+  'Основы Vue',
+  'Реактивность',
+  'Методы и computed',
+  'Компоненты',
+  'Списки',
+  'Props и emit',
+  'Директивы',
+  'События',
+  'Vue Router',
+  'Работа с API',
+  'Pinia',
+  'localStorage',
+  'Продвинутый Vue'
+
+];
+
+const angularTopics = [
+
+  'Основы Angular',
+  'Components',
+  'Templates',
+  'Directives',
+  'Services',
+  'Routing',
+  'Forms',
+  'HTTP',
+  'RxJS',
+  'Dependency Injection',
+  'State Management',
+  'Angular Material',
+  'Advanced Angular'
+
+];
+
+async function loadAccountProgress() {
+
+  const userId = localStorage.getItem('userId');
+
+  try {
+
+  const response = await fetch(
+  `http://localhost:3000/progress/${userId}/html`
+  );
+
+    const progress = await response.json();
+    accountProgress = progress;
+    console.log(progress);
+    console.log(Array.isArray(progress));
+
+    console.log(progress);
+
+    // сколько тем всего
+    const totalTopics = progress.length;
+
+    // сколько завершено
+    const completedTopics = progress.filter(
+      topic => topic.completed
+    ).length;
+
+    // считаем процент
+    const percent = totalTopics > 0
+  ? Math.round(
+      (completedTopics / totalTopics) * 100
+    )
+  : 0;
+
+    console.log(percent);
+
+    // красная полоска
+    const fill =
+      document.getElementById(
+        'html-progress-fill'
+      );
+
+    fill.style.width = percent + '%';
+
+    // текст процента
+    const text =
+      document.getElementById(
+        'html-progress-text'
+      );
+
+    text.textContent = percent + '%';
+
+  } catch(error) {
+
+    console.log(error);
+
+  }
+
+}
+
+const username =
+  localStorage.getItem('username');
+
+document.getElementById(
+  'username'
+).textContent = username;
+
+loadAccountProgress();
+
+async function loadCssProgress() {
+
+  const userId = localStorage.getItem('userId');
+
+  try {
+
+    const response = await fetch(
+      `http://localhost:3000/progress/${userId}/css`
+    );
+
+    const progress = await response.json();
+    cssProgress = progress;
+
+    console.log(
+      'CSS progress:',
+      JSON.stringify(progress, null, 2)
+    );
+
+    const totalTopics = progress.length;
+
+    const completedTopics = progress.filter(
+      topic => topic.completed
+    ).length;
+
+    const percent = totalTopics > 0
+  ? Math.round(
+      (completedTopics / totalTopics) * 100
+    )
+  : 0;
+
+    const fill = document.getElementById(
+      'css-progress-fill'
+    );
+
+    fill.style.width = percent + '%';
+
+    const text = document.getElementById(
+      'css-progress-text'
+    );
+
+    text.textContent = percent + '%';
+
+  } catch(error) {
+
+    console.log(error);
+
+  }
+
+}
+
+async function loadJsProgress() {
+
+  const userId = localStorage.getItem('userId');
+
+  try {
+
+    const response = await fetch(
+      `http://localhost:3000/progress/${userId}/js`
+    );
+
+    const progress = await response.json();
+
+    jsProgress = progress;
+
+    console.log(
+      'JS progress:',
+      JSON.stringify(progress, null, 2)
+    );
+
+    const totalTopics = progress.length;
+
+    const completedTopics = progress.filter(
+      item => item.completed
+    ).length;
+
+    const progressPercent =
+      totalTopics > 0
+        ? Math.round(
+            (completedTopics / totalTopics) * 100
+          )
+        : 0;
+
+const fill =
+  document.getElementById(
+    'js-progress-fill'
+  );
+
+fill.style.width =
+  progressPercent + '%';
+
+const text =
+  document.getElementById(
+    'js-progress-text'
+  );
+
+text.textContent =
+  progressPercent + '%';
+
+  }
+
+  catch(error) {
+
+    console.log(error);
+
+  }
+
+}
+
+async function loadTsProgress() {
+
+  const userId = localStorage.getItem('userId');
+
+  try {
+
+    const response = await fetch(
+      `http://localhost:3000/progress/${userId}/ts`
+    );
+
+    const progress = await response.json();
+
+    tsProgress = progress;
+
+    console.log(
+      'TS progress:',
+      JSON.stringify(progress, null, 2)
+    );
+
+    const totalTopics = progress.length;
+
+    const completedTopics = progress.filter(
+      item => item.completed
+    ).length;
+
+    const progressPercent =
+      totalTopics > 0
+        ? Math.round(
+            (completedTopics / totalTopics) * 100
+          )
+        : 0;
+
+    const fill =
+      document.getElementById(
+        'ts-progress-fill'
+      );
+
+    fill.style.width =
+      progressPercent + '%';
+
+    const text =
+      document.getElementById(
+        'ts-progress-text'
+      );
+
+    text.textContent =
+      progressPercent + '%';
+
+  }
+
+  catch(error) {
+
+    console.log(error);
+
+  }
+
+}
+
+async function loadReactProgress() {
+
+  const userId =
+    localStorage.getItem('userId');
+
+  try {
+
+    const response = await fetch(
+      `http://localhost:3000/progress/${userId}/react`
+    );
+
+    const progress =
+      await response.json();
+
+    reactProgress = progress;
+
+    const totalTopics =
+      progress.length;
+
+    const completedTopics =
+      progress.filter(
+        item => item.completed
+      ).length;
+
+    const progressPercent =
+      totalTopics > 0
+        ? Math.round(
+            (
+              completedTopics /
+              totalTopics
+            ) * 100
+          )
+        : 0;
+
+    const fill =
+      document.getElementById(
+        'react-progress-fill'
+      );
+
+    fill.style.width =
+      progressPercent + '%';
+
+    const text =
+      document.getElementById(
+        'react-progress-text'
+      );
+
+    text.textContent =
+      progressPercent + '%';
+
+  }
+
+  catch(error) {
+
+    console.log(error);
+
+  }
+
+}
+
+async function loadVueProgress() {
+
+  const userId =
+    localStorage.getItem('userId');
+
+  try {
+
+    const response = await fetch(
+      `http://localhost:3000/progress/${userId}/vue`
+    );
+
+    const progress =
+      await response.json();
+
+    vueProgress = progress;
+
+    const totalTopics =
+      progress.length;
+
+    const completedTopics =
+      progress.filter(
+        item => item.completed
+      ).length;
+
+    const progressPercent =
+      totalTopics > 0
+        ? Math.round(
+            (
+              completedTopics /
+              totalTopics
+            ) * 100
+          )
+        : 0;
+
+    const fill =
+      document.getElementById(
+        'vue-progress-fill'
+      );
+
+    fill.style.width =
+      progressPercent + '%';
+
+    const text =
+      document.getElementById(
+        'vue-progress-text'
+      );
+
+    text.textContent =
+      progressPercent + '%';
+
+  }
+
+  catch(error) {
+
+    console.log(error);
+
+  }
+
+}
+
+async function loadAngularProgress() {
+
+  const userId =
+    localStorage.getItem('userId');
+
+  try {
+
+    const response = await fetch(
+      `http://localhost:3000/progress/${userId}/angular`
+    );
+
+    const progress =
+      await response.json();
+
+    angularProgress = progress;
+
+    const totalTopics =
+      progress.length;
+
+    const completedTopics =
+      progress.filter(
+        item => item.completed
+      ).length;
+
+    const progressPercent =
+      totalTopics > 0
+        ? Math.round(
+            (
+              completedTopics /
+              totalTopics
+            ) * 100
+          )
+        : 0;
+
+    const fill =
+      document.getElementById(
+        'angular-progress-fill'
+      );
+
+    fill.style.width =
+      progressPercent + '%';
+
+    const text =
+      document.getElementById(
+        'angular-progress-text'
+      );
+
+    text.textContent =
+      progressPercent + '%';
+
+  }
+
+  catch(error) {
+
+    console.log(error);
+
+  }
+
+}
+
+loadCssProgress();
+
+loadJsProgress();
+
+loadTsProgress();
+
+loadReactProgress();
+
+loadVueProgress();
+
+loadAngularProgress();
+
+</script>
+<script>
+
+async function loadAccount() {
+
+  const userId = localStorage.getItem('userId');
+
+  try {
+
+const courses = [
+
+  'html',
+  'css',
+  'js',
+  'ts',
+  'react',
+  'vue',
+  'angular'
+
+];
+
+const responses = await Promise.all(
+
+  courses.map(course =>
+
+    fetch(
+      `http://localhost:3000/progress/${userId}/${course}`
+    )
+      .then(res => res.json())
+
+  )
+
+);
+
+const progress =
+  responses.flat();
+
+
+    // сколько тем пройдено
+    const completedCount = progress.filter(
+      topic => topic.completed
+    ).length;
+
+    console.log('Пройдено тем:', completedCount);
+
+    const totalTopics =
+  progress.length;
+
+const overallPercent =
+  totalTopics > 0
+    ? Math.round(
+        (
+          completedCount /
+          totalTopics
+        ) * 100
+      )
+    : 0;
+
+console.log(
+  'Общий прогресс:',
+  overallPercent + '%'
+);
+
+const overallFill =
+  document.getElementById(
+    'overall-progress-fill'
+  );
+
+overallFill.style.width =
+  overallPercent + '%';
+
+  const overallText =
+  document.getElementById(
+    'overall-progress-text'
+  );
+
+overallText.textContent =
+  overallPercent + '%';
+
+    // элементы
+    const stageText = document.getElementById(
+      'evolution-stage'
+    );
+
+    const characterImage = document.getElementById(
+      'character-image'
+    );
+
+    const daysLabel =
+  document.getElementById(
+    'days-count'
+  );
+
+// проверяем активность
+const lastActivity =
+  localStorage.getItem('lastActivity');
+
+const now = new Date().getTime();
+
+const sevenDays =
+  7 * 24 * 60 * 60 * 1000;
+
+// первая активность
+const firstActivity =
+  localStorage.getItem(
+    'firstActivity'
+  );
+
+if (!firstActivity) {
+
+  localStorage.setItem(
+    'firstActivity',
+    now
+  );
+
+}
+
+// считаем дни
+const savedFirstActivity =
+  localStorage.getItem(
+    'firstActivity'
+  );
+
+const activeDays =
+  savedFirstActivity
+    ? Math.floor(
+        (
+          now -
+          Number(savedFirstActivity)
+        ) / (
+          1000 * 60 * 60 * 24
+        )
+      )
+    : 0;
+
+// выводим дни
+const days =
+  activeDays + 1;
+
+let daysText = '';
+
+if (
+  days % 10 === 1 &&
+  days % 100 !== 11
+) {
+
+  daysText = 'день';
+
+}
+
+else if (
+  [2, 3, 4].includes(days % 10) &&
+  ![12, 13, 14].includes(days % 100)
+) {
+
+  daysText = 'дня';
+
+}
+
+else {
+
+  daysText = 'дней';
+
+}
+
+daysLabel.textContent =
+  days + ' ' + daysText;
+
+// чёрная дыра
+if (
+  lastActivity &&
+  now - Number(lastActivity) > sevenDays
+) {
+
+  stageText.textContent =
+    'чёрная дыра';
+
+  characterImage.querySelector('source').src =
+  '../images/avatar/blackhole.mp4';
+
+  characterImage.load();
+
+  return;
+
+}
+
+  console.log(daysLabel);
+
+    // стадии эволюции
+if (overallPercent <= 10) {
+
+  stageText.textContent =
+    'звёздная пыль';
+
+characterImage.querySelector('source').src =
+  '../images/avatar/dust.mp4';
+
+characterImage.load();
+
+}
+
+else if (overallPercent <= 30) {
+
+  stageText.textContent =
+    'протозвезда';
+
+characterImage.querySelector('source').src =
+  '../images/avatar/proto.mp4';
+
+characterImage.load();
+
+}
+
+else if (overallPercent <= 60) {
+
+  stageText.textContent =
+    'звезда';
+
+characterImage.querySelector('source').src =
+  '../images/avatar/star.mp4';
+
+characterImage.load();
+
+}
+
+else if (overallPercent <= 90) {
+
+  stageText.textContent =
+    'красный гигант';
+
+characterImage.querySelector('source').src =
+  '../images/avatar/giant.mp4';
+
+characterImage.load();
+
+}
+
+else {
+
+  stageText.textContent =
+    'сверхновая';
+
+characterImage.querySelector('source').src =
+  '../images/avatar/blackhole.mp4';
+
+characterImage.load();
+
+}
+
+  } catch(error) {
+
+    console.log(
+      'Ошибка загрузки аккаунта:',
+      error
+    );
+
+  }
+
+}
+
+loadAccount();
+
+</script>
+<script>
+(function() {
+  const modal = document.getElementById('course-modal');
+  const modalTitle = document.getElementById('modal-title');
+  const modalSummary = document.getElementById('modal-summary');
+  const modalBody = document.getElementById('modal-body');
+
+  const courseSamples = {
+    css: {
+      title: 'CSS',
+      summary: 'Примерные результаты по курсу CSS. Здесь отображается прогресс прохождения тестов и статус выполнения.',
+      tests: [
+        {name: 'Стилизация текста', status: 'Пройдено', score: '100%'},
+        {name: 'Флексбокс и гриды', status: 'Пройдено', score: '90%'},
+        {name: 'Адаптивный дизайн', status: 'В процессе', score: '60%'}
+      ]
+    },
+    js: {
+      title: 'JavaScript',
+      summary: 'Примерные результаты по курсу JavaScript. Отображаются тесты и примерные оценки.',
+      tests: [
+        {name: 'Переменные и типы', status: 'Пройдено', score: '100%'},
+        {name: 'Функции', status: 'Пройдено', score: '85%'},
+        {name: 'Асинхронность', status: 'В процессе', score: '45%'}
+      ]
+    },
+    ts: {
+      title: 'TypeScript',
+      summary: 'Примерные результаты по курсу TypeScript: типы, интерфейсы, и проверка кода.',
+      tests: [
+        {name: 'Типы данных', status: 'Пройдено', score: '95%'},
+        {name: 'Интерфейсы', status: 'Пройдено', score: '90%'},
+        {name: 'Генерики', status: 'В процессе', score: '50%'}
+      ]
+    },
+    react: {
+      title: 'React',
+      summary: 'Примерные результаты по курсу React. Включены тесты по компонентам и состоянию.',
+      tests: [
+        {name: 'JSX и компоненты', status: 'Пройдено', score: '100%'},
+        {name: 'Props и state', status: 'Пройдено', score: '88%'},
+        {name: 'Хуки', status: 'В процессе', score: '55%'}
+      ]
+    },
+    vue: {
+      title: 'Vue.js',
+      summary: 'Примерные результаты по курсу Vue.js: шаблоны, реактивность и маршрутизация.',
+      tests: [
+        {name: 'Основы Vue', status: 'Пройдено', score: '92%'},
+        {name: 'Компоненты', status: 'Пройдено', score: '87%'},
+        {name: 'Vue Router', status: 'В процессе', score: '54%'}
+      ]
+    },
+    angular: {
+      title: 'Angular',
+      summary: 'Примерные результаты по курсу Angular: архитектура, модули и данные.',
+      tests: [
+        {name: 'Модули и компоненты', status: 'Пройдено', score: '89%'},
+        {name: 'Сервисы', status: 'Пройдено', score: '85%'},
+        {name: 'RxJS', status: 'В процессе', score: '50%'}
+      ]
+    }
+  };
+
+  function createHtmlDetails(progress) {
+    if (!Array.isArray(progress) || !progress.length) {
+      return {
+        title: 'HTML',
+        summary: 'Данные прогресса по HTML недоступны. Попробуйте снова позже.',
+        tests: []
+      };
+    }
+
+    const total = progress.length;
+    const passed = progress.filter(item => item.completed).length;
+    const percent = Math.round((passed / total) * 100);
+    const tests = progress.map(item => ({
+      name: htmlTopics[item.topic_id - 1] || `Тест ${item.topic_id || 1}`,
+      status: item.completed ? 'Пройдено' : 'Не пройдено',
+      score: item.completed ? '100%' : '0%'
+    }));
+
+    return {
+      title: 'HTML',
+      summary: `Пройдено ${passed} из ${total} тестов. Общий прогресс: ${percent}%.`, 
+      tests
+    };
+  }
+
+  function createCssDetails(progress) {
+
+  if (!Array.isArray(progress) || !progress.length) {
+
+    return {
+      title: 'CSS',
+      summary: 'Тесты ещё не пройдены.',
+      tests: []
+    };
+
+  }
+
+  const total = progress.length;
+
+  const passed = progress.filter(
+    item => item.completed
+  ).length;
+
+  const percent = total > 0
+    ? Math.round((passed / total) * 100)
+    : 0;
+
+  const tests = progress.map(item => ({
+
+    name:
+      cssTopics[item.topic_id - 1]
+      || `Тема ${item.topic_id}`,
+
+    status:
+      item.completed
+        ? 'Пройдено'
+        : 'Не пройдено',
+
+    score:
+      item.completed
+        ? '100%'
+        : '0%'
+
+  }));
+
+  return {
+
+    title: 'CSS',
+
+    summary:
+      `Пройдено ${passed} из ${total} тестов. Общий прогресс: ${percent}%.`,
+
+    tests
+
+  };
+
+}
+
+function createJsDetails(progress) {
+
+  if (!Array.isArray(progress) || !progress.length) {
+
+    return {
+
+      title: 'JS',
+
+      summary: 'Тесты ещё не пройдены.',
+
+      tests: []
+
+    };
+
+  }
+
+  const total = progress.length;
+
+  const passed = progress.filter(
+    item => item.completed
+  ).length;
+
+  const percent =
+    total > 0
+      ? Math.round((passed / total) * 100)
+      : 0;
+
+  const tests = progress.map(item => ({
+
+    name:
+      jsTopics[item.topic_id - 1]
+      || `Тема ${item.topic_id}`,
+
+    status:
+      item.completed
+        ? 'Пройдено'
+        : 'Не пройдено',
+
+    score:
+      item.completed
+        ? '100%'
+        : '0%'
+
+  }));
+
+  return {
+
+    title: 'JS',
+
+    summary:
+      `Пройдено ${passed} из ${total} тестов. Общий прогресс: ${percent}%.`,
+
+    tests
+
+  };
+
+}
+
+function createTsDetails(progress) {
+
+  if (!Array.isArray(progress) || !progress.length) {
+
+    return {
+
+      title: 'TS',
+
+      summary: 'Тесты ещё не пройдены.',
+
+      tests: []
+
+    };
+
+  }
+
+  const total = progress.length;
+
+  const passed = progress.filter(
+    item => item.completed
+  ).length;
+
+  const percent =
+    total > 0
+      ? Math.round((passed / total) * 100)
+      : 0;
+
+  const tests = progress.map(item => ({
+
+    name:
+      tsTopics[item.topic_id - 1]
+      || `Тема ${item.topic_id}`,
+
+    status:
+      item.completed
+        ? 'Пройдено'
+        : 'Не пройдено',
+
+    score:
+      item.completed
+        ? '100%'
+        : '0%'
+
+  }));
+
+  return {
+
+    title: 'TS',
+
+    summary:
+      `Пройдено ${passed} из ${total} тестов. Общий прогресс: ${percent}%.`,
+
+    tests
+
+  };
+
+}
+
+function createReactDetails(progress) {
+
+  if (!Array.isArray(progress) || !progress.length) {
+
+    return {
+
+      title: 'REACT',
+
+      summary: 'Тесты ещё не пройдены.',
+
+      tests: []
+
+    };
+
+  }
+
+  const total = progress.length;
+
+  const passed = progress.filter(
+    item => item.completed
+  ).length;
+
+  const percent =
+    total > 0
+      ? Math.round(
+          (passed / total) * 100
+        )
+      : 0;
+
+  const tests = progress.map(item => ({
+
+    name:
+      reactTopics[item.topic_id - 1]
+      || `Тема ${item.topic_id}`,
+
+    status:
+      item.completed
+        ? 'Пройдено'
+        : 'Не пройдено',
+
+    score:
+      item.completed
+        ? '100%'
+        : '0%'
+
+  }));
+
+  return {
+
+    title: 'REACT',
+
+    summary:
+      `Пройдено ${passed} из ${total} тестов. Общий прогресс: ${percent}%.`,
+
+    tests
+
+  };
+
+}
+
+function createVueDetails(progress) {
+
+  if (!Array.isArray(progress) || !progress.length) {
+
+    return {
+
+      title: 'VUE.JS',
+
+      summary: 'Тесты ещё не пройдены.',
+
+      tests: []
+
+    };
+
+  }
+
+  const total = progress.length;
+
+  const passed = progress.filter(
+    item => item.completed
+  ).length;
+
+  const percent =
+    total > 0
+      ? Math.round(
+          (passed / total) * 100
+        )
+      : 0;
+
+  const tests = progress.map(item => ({
+
+    name:
+      vueTopics[item.topic_id - 1]
+      || `Тема ${item.topic_id}`,
+
+    status:
+      item.completed
+        ? 'Пройдено'
+        : 'Не пройдено',
+
+    score:
+      item.completed
+        ? '100%'
+        : '0%'
+
+  }));
+
+  return {
+
+    title: 'VUE.JS',
+
+    summary:
+      `Пройдено ${passed} из ${total} тестов. Общий прогресс: ${percent}%.`,
+
+    tests
+
+  };
+
+}
+
+function createAngularDetails(progress) {
+
+  if (!Array.isArray(progress) || !progress.length) {
+
+    return {
+
+      title: 'ANGULAR',
+
+      summary: 'Тесты ещё не пройдены.',
+
+      tests: []
+
+    };
+
+  }
+
+  const total = progress.length;
+
+  const passed = progress.filter(
+    item => item.completed
+  ).length;
+
+  const percent =
+    total > 0
+      ? Math.round(
+          (passed / total) * 100
+        )
+      : 0;
+
+  const tests = progress.map(item => ({
+
+    name:
+      angularTopics[item.topic_id - 1]
+      || `Тема ${item.topic_id}`,
+
+    status:
+      item.completed
+        ? 'Пройдено'
+        : 'Не пройдено',
+
+    score:
+      item.completed
+        ? '100%'
+        : '0%'
+
+  }));
+
+  return {
+
+    title: 'ANGULAR',
+
+    summary:
+      `Пройдено ${passed} из ${total} тестов. Общий прогресс: ${percent}%.`,
+
+    tests
+
+  };
+
+}
+
+  function hideModal() {
+    modal.classList.remove('modal--visible');
+    modal.setAttribute('aria-hidden', 'true');
+    modalTitle.textContent = '';
+    modalSummary.textContent = '';
+    modalBody.innerHTML = '';
+  }
+
+  function showModal(course) {
+    let courseData;
+
+if (course === 'html') {
+
+  courseData =
+    createHtmlDetails(accountProgress);
+
+}
+
+else if (course === 'css') {
+
+  courseData =
+    createCssDetails(cssProgress);
+
+}
+
+else if (course === 'js') {
+
+  courseData =
+    createJsDetails(jsProgress);
+
+}
+
+else if (course === 'ts') {
+
+  courseData =
+    createTsDetails(tsProgress);
+
+}
+
+else if (course === 'react') {
+
+  courseData =
+    createReactDetails(
+      reactProgress
+    );
+
+}
+
+else if (course === 'vue') {
+
+  courseData =
+    createVueDetails(
+      vueProgress
+    );
+
+}
+
+else if (course === 'angular') {
+
+  courseData =
+    createAngularDetails(
+      angularProgress
+    );
+
+}
+
+else {
+
+  courseData =
+    courseSamples[course];
+
+}
+
+
+    if (!courseData) {
+      return;
+    }
+
+    modalTitle.textContent = `${courseData.title} — результаты`;
+    modalSummary.textContent = courseData.summary;
+    modalBody.innerHTML = '';
+
+    if (courseData.tests && courseData.tests.length) {
+      const list = document.createElement('ul');
+      list.className = 'modal__list';
+
+      courseData.tests.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.className = 'modal__list-item';
+        listItem.innerHTML = `<span>${item.name}</span><span>${item.status} · ${item.score}</span>`;
+        list.appendChild(listItem);
+      });
+
+      modalBody.appendChild(list);
+    } else {
+      modalBody.innerHTML = '<div class="modal__item"><div class="modal__item-title">Информация</div><div class="modal__item-text">Тут будут отображаться результаты пройденных тестов.</div></div>';
+    }
+
+    modal.classList.add('modal--visible');
+    modal.setAttribute('aria-hidden', 'false');
+  }
+
+  document.querySelectorAll('.skill__label').forEach(button => {
+    button.addEventListener('click', () => showModal(button.dataset.course));
+    button.addEventListener('keyup', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        showModal(button.dataset.course);
+      }
+    });
+  });
+
+  modal.addEventListener('click', event => {
+    if (event.target.dataset.close) {
+      hideModal();
+    }
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && modal.classList.contains('modal--visible')) {
+      hideModal();
+    }
+  });
+})();
+</script>
+<script src="responsive.js" defer></script>
+</body>
+</html>

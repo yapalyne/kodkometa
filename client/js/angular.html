@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <title>Angular</title>
+  <link rel="stylesheet" href="../css/common.css" />
+  <link rel="stylesheet" href="../css/angular.css" />
+</head>
+<body>
+<div class="desktop desktop--scale-adaptive">
+  <div class="line-1"></div>
+  <div class="line-15"></div>
+  <div class="line-2"></div>
+  <div class="line-8"></div>
+  <div class="line-10"></div>
+  <div class="line-11"></div>
+  <div class="line-12"></div>
+  <div class="line-13"></div>
+  <div class="line-9"></div>
+  <div class="line-7"></div>
+  <div class="line-6"></div>
+  <div class="line-5"></div>
+  <div class="line-4"></div>
+  <div class="line-3"></div>
+<div class="topic div" data-topic="1">основы angular</div>
+<div class="topic div2" data-topic="2">components</div>
+<div class="topic div3" data-topic="3">templates</div>
+<div class="topic div4" data-topic="4">directives</div>
+<div class="topic div5" data-topic="5">services</div>
+<div class="topic div6" data-topic="6">routing</div>
+<div class="topic div7" data-topic="7">forms</div>
+<div class="topic div8" data-topic="8">http</div>
+<div class="topic div9" data-topic="9">rxjs</div>
+<div class="topic seo" data-topic="10">dependency injection</div>
+<div class="topic div10" data-topic="11">state management</div>
+<div class="topic div11" data-topic="12">angular material</div>
+<div class="topic div12" data-topic="13">advanced angular</div>
+  <div class="line-14"></div>
+<div class="div13">cli</div>
+<div class="div14">typescript</div>
+<div class="div15">архитектура</div>
+<div class="div16">modules</div>
+<div class="div17">bootstrap</div>
+  <div class="line-16"></div>
+  <div class="line-17"></div>
+  <div class="line-18"></div>
+  <div class="line-19"></div>
+  <div class="line-20"></div>
+  <div class="line-21"></div>
+
+<div class="div22">@Component</div>
+<div class="div23">selector</div>
+<div class="div24">template</div>
+<div class="div25">styleUrls</div>
+<div class="div26">lifecycle</div>
+  <div class="line-22"></div>
+  <div class="line-23"></div>
+  <div class="line-24"></div>
+  <div class="line-25"></div>
+  <div class="line-26"></div>
+  <div class="line-27"></div>
+
+<div class="div27">interpolation</div>
+<div class="div28">property binding</div>
+<div class="div29">event binding</div>
+<div class="div30">two-way binding</div>
+<div class="div31">pipes</div>
+  <div class="line-28"></div>
+  <div class="line-29"></div>
+  <div class="line-30"></div>
+  <div class="line-31"></div>
+  <div class="line-32"></div>
+  <div class="line-33"></div>
+
+<div class="div32">*ngIf</div>
+<div class="div33">*ngFor</div>
+<div class="div34">ngClass</div>
+<div class="div35">ngStyle</div>
+<div class="div36">custom directives</div>
+  <div class="line-34"></div>
+  <div class="line-35"></div>
+  <div class="line-36"></div>
+  <div class="line-37"></div>
+  <div class="line-38"></div>
+  <div class="line-39"></div>
+
+<div class="div37">@Injectable</div>
+<div class="div38">singleton</div>
+<div class="div39">dependency injection</div>
+<div class="div40">providers</div>
+<div class="div41">shared services</div>
+  <div class="line-40"></div>
+  <div class="line-41"></div>
+  <div class="line-42"></div>
+  <div class="line-43"></div>
+  <div class="line-44"></div>
+  <div class="line-45"></div>
+
+<div class="div42">routerLink</div>
+<div class="div43">Routes</div>
+<div class="div44">RouterOutlet</div>
+<div class="div45">lazy loading</div>
+<div class="div46">guards</div>
+  <div class="line-46"></div>
+  <div class="line-47"></div>
+  <div class="line-48"></div>
+  <div class="line-49"></div>
+  <div class="line-50"></div>
+  <div class="line-51"></div>
+
+<div class="div47">ngModel</div>
+<div class="div48">FormControl</div>
+<div class="div49">FormGroup</div>
+<div class="div50">validators</div>
+<div class="div51">reactive forms</div>
+  <div class="line-52"></div>
+  <div class="line-53"></div>
+  <div class="line-54"></div>
+  <div class="line-55"></div>
+  <div class="line-56"></div>
+  <div class="line-57"></div>
+
+<div class="div52">HttpClient</div>
+<div class="div53">GET</div>
+<div class="div54">POST</div>
+<div class="div55">headers</div>
+<div class="div56">interceptors</div>
+  <div class="line-58"></div>
+  <div class="line-59"></div>
+  <div class="line-60"></div>
+  <div class="line-61"></div>
+  <div class="line-62"></div>
+  <div class="line-63"></div>
+
+<div class="div57">Observable</div>
+<div class="div58">subscribe</div>
+<div class="div59">pipe</div>
+<div class="div60">map</div>
+<div class="div61">switchMap</div>
+  <div class="line-64"></div>
+  <div class="line-65"></div>
+  <div class="line-66"></div>
+  <div class="line-67"></div>
+  <div class="line-68"></div>
+  <div class="line-69"></div>
+
+<div class="div62">inject()</div>
+<div class="div63">providers</div>
+<div class="div64">tokens</div>
+<div class="div65">hierarchy</div>
+<div class="div66">services</div>
+  <div class="line-70"></div>
+  <div class="line-71"></div>
+  <div class="line-72"></div>
+  <div class="line-73"></div>
+  <div class="line-74"></div>
+  <div class="line-75"></div>
+
+<div class="div67">signals</div>
+<div class="div68">ngrx</div>
+<div class="div69">store</div>
+<div class="div70">actions</div>
+<div class="div71">selectors</div>
+  <div class="line-76"></div>
+  <div class="line-77"></div>
+  <div class="line-78"></div>
+  <div class="line-79"></div>
+  <div class="line-80"></div>
+  <div class="line-81"></div>
+
+<div class="div72">mat-button</div>
+<div class="div73">mat-input</div>
+<div class="div74">mat-card</div>
+<div class="div75">themes</div>
+<div class="div76">icons</div>
+  <div class="line-82"></div>
+  <div class="line-83"></div>
+  <div class="line-84"></div>
+  <div class="line-85"></div>
+  <div class="line-86"></div>
+  <div class="line-87"></div>
+
+<div class="div77">standalone</div>
+<div class="div78">SSR</div>
+<div class="div79">hydration</div>
+<div class="div80">performance</div>
+<div class="div81">optimization</div>
+  <div class="line-88"></div>
+  <div class="line-89"></div>
+  <div class="line-90"></div>
+  <div class="line-91"></div>
+  <div class="line-92"></div>
+  <div class="line-93"></div>
+
+  <div class="rectangle-1">
+    <div class="html">
+      Тест: Основы Angular
+      <br />
+    </div>
+    <div class="_5">Ответьте на 5 вопросов, чтобы завершить тему</div>
+    <div class="rectangle-2" id="start-quiz-1">
+    <div class="div20">пройти</div>
+  </div>
+  </div>
+
+  <div class="quiz-1" id="quiz-1">
+    <div class="quiz-progress" id="quiz-1-progress"></div>
+    <div class="quiz-question" id="quiz-1-question"></div>
+    <div class="quiz-options" id="quiz-1-options"></div>
+    <input class="quiz-input" id="quiz-1-answer" type="text" placeholder="Введите последовательность" />
+    <div class="rectangle-2" id="quiz-1-check">
+      <div class="div20" id="quiz-1-check-text">далее</div>
+    </div>
+    <div class="quiz-result" id="quiz-1-result"></div>
+    <div class="rectangle-2" id="quiz-1-restart" style="display: none;">
+      <div class="div20">пройти заново</div>
+    </div>
+  </div>
+
+  <div class="quiz-1" id="quiz-2">
+    <div class="quiz-progress" id="quiz-2-progress"></div>
+    <div class="quiz-question" id="quiz-2-question"></div>
+    <div class="quiz-options" id="quiz-2-options"></div>
+    <input class="quiz-input" id="quiz-2-answer" type="text" placeholder="Введите букву ответа" />
+    <div class="rectangle-2" id="quiz-2-check">
+      <div class="div20" id="quiz-2-check-text">далее</div>
+    </div>
+    <div class="quiz-result" id="quiz-2-result"></div>
+    <div class="rectangle-2" id="quiz-2-restart" style="display: none;">
+      <div class="div20">пройти заново</div>
+    </div>
+  </div>
+
+  <div class="quiz-1" id="quiz-3">
+    <div class="quiz-progress" id="quiz-3-progress"></div>
+    <div class="quiz-question" id="quiz-3-question"></div>
+    <div class="quiz-options" id="quiz-3-options"></div>
+    <input class="quiz-input" id="quiz-3-answer" type="text" placeholder="Введите букву ответа" />
+    <div class="rectangle-2" id="quiz-3-check">
+      <div class="div20" id="quiz-3-check-text">далее</div>
+    </div>
+    <div class="quiz-result" id="quiz-3-result"></div>
+    <div class="rectangle-2" id="quiz-3-restart" style="display: none;">
+      <div class="div20">пройти заново</div>
+    </div>
+  </div>
+
+  <div class="quiz-1" id="quiz-4">
+    <div class="quiz-progress" id="quiz-4-progress"></div>
+    <div class="quiz-question" id="quiz-4-question"></div>
+    <div class="quiz-options" id="quiz-4-options"></div>
+    <input class="quiz-input" id="quiz-4-answer" type="text" placeholder="Введите букву ответа" />
+    <div class="rectangle-2" id="quiz-4-check">
+      <div class="div20" id="quiz-4-check-text">далее</div>
+    </div>
+    <div class="quiz-result" id="quiz-4-result"></div>
+    <div class="rectangle-2" id="quiz-4-restart" style="display: none;">
+      <div class="div20">пройти заново</div>
+    </div>
+  </div>
+
+  <div class="quiz-1" id="quiz-5">
+    <div class="quiz-progress" id="quiz-5-progress"></div>
+    <div class="quiz-question" id="quiz-5-question"></div>
+    <div class="quiz-options" id="quiz-5-options"></div>
+    <input class="quiz-input" id="quiz-5-answer" type="text" placeholder="Введите букву ответа" />
+    <div class="rectangle-2" id="quiz-5-check">
+      <div class="div20" id="quiz-5-check-text">далее</div>
+    </div>
+    <div class="quiz-result" id="quiz-5-result"></div>
+    <div class="rectangle-2" id="quiz-5-restart" style="display: none;">
+      <div class="div20">пройти заново</div>
+    </div>
+  </div>
+
+  <div class="quiz-1" id="quiz-6">
+    <div class="quiz-progress" id="quiz-6-progress"></div>
+    <div class="quiz-question" id="quiz-6-question"></div>
+    <div class="quiz-options" id="quiz-6-options"></div>
+    <input class="quiz-input" id="quiz-6-answer" type="text" placeholder="Введите букву ответа" />
+    <div class="rectangle-2" id="quiz-6-check">
+      <div class="div20" id="quiz-6-check-text">далее</div>
+    </div>
+    <div class="quiz-result" id="quiz-6-result"></div>
+    <div class="rectangle-2" id="quiz-6-restart" style="display: none;">
+      <div class="div20">пройти заново</div>
+    </div>
+  </div>
+
+  <div class="quiz-1" id="quiz-7">
+    <div class="quiz-progress" id="quiz-7-progress"></div>
+    <div class="quiz-question" id="quiz-7-question"></div>
+    <div class="quiz-options" id="quiz-7-options"></div>
+    <input class="quiz-input" id="quiz-7-answer" type="text" placeholder="Введите букву ответа" />
+    <div class="rectangle-2" id="quiz-7-check">
+      <div class="div20" id="quiz-7-check-text">далее</div>
+    </div>
+    <div class="quiz-result" id="quiz-7-result"></div>
+    <div class="rectangle-2" id="quiz-7-restart" style="display: none;">
+      <div class="div20">пройти заново</div>
+    </div>
+  </div>
+
+  <div class="quiz-1" id="quiz-8">
+    <div class="quiz-progress" id="quiz-8-progress"></div>
+    <div class="quiz-question" id="quiz-8-question"></div>
+    <div class="quiz-options" id="quiz-8-options"></div>
+    <input class="quiz-input" id="quiz-8-answer" type="text" placeholder="Введите букву ответа" />
+    <div class="rectangle-2" id="quiz-8-check">
+      <div class="div20" id="quiz-8-check-text">далее</div>
+    </div>
+    <div class="quiz-result" id="quiz-8-result"></div>
+    <div class="rectangle-2" id="quiz-8-restart" style="display: none;">
+      <div class="div20">пройти заново</div>
+    </div>
+  </div>
+
+  <div class="quiz-1" id="quiz-9">
+    <div class="quiz-progress" id="quiz-9-progress"></div>
+    <div class="quiz-question" id="quiz-9-question"></div>
+    <div class="quiz-options" id="quiz-9-options"></div>
+    <input class="quiz-input" id="quiz-9-answer" type="text" placeholder="Введите букву ответа" />
+    <div class="rectangle-2" id="quiz-9-check">
+      <div class="div20" id="quiz-9-check-text">далее</div>
+    </div>
+    <div class="quiz-result" id="quiz-9-result"></div>
+    <div class="rectangle-2" id="quiz-9-restart" style="display: none;">
+      <div class="div20">пройти заново</div>
+    </div>
+  </div>
+
+  <div class="quiz-1" id="quiz-10">
+    <div class="quiz-progress" id="quiz-10-progress"></div>
+    <div class="quiz-question" id="quiz-10-question"></div>
+    <div class="quiz-options" id="quiz-10-options"></div>
+    <input class="quiz-input" id="quiz-10-answer" type="text" placeholder="Введите букву ответа" />
+    <div class="rectangle-2" id="quiz-10-check">
+      <div class="div20" id="quiz-10-check-text">далее</div>
+    </div>
+    <div class="quiz-result" id="quiz-10-result"></div>
+    <div class="rectangle-2" id="quiz-10-restart" style="display: none;">
+      <div class="div20">пройти заново</div>
+    </div>
+  </div>
+
+  <div class="quiz-1" id="quiz-11">
+    <div class="quiz-progress" id="quiz-11-progress"></div>
+    <div class="quiz-question" id="quiz-11-question"></div>
+    <div class="quiz-options" id="quiz-11-options"></div>
+    <input class="quiz-input" id="quiz-11-answer" type="text" placeholder="Введите букву ответа" />
+    <div class="rectangle-2" id="quiz-11-check">
+      <div class="div20" id="quiz-11-check-text">далее</div>
+    </div>
+    <div class="quiz-result" id="quiz-11-result"></div>
+    <div class="rectangle-2" id="quiz-11-restart" style="display: none;">
+      <div class="div20">пройти заново</div>
+    </div>
+  </div>
+
+  <div class="quiz-1" id="quiz-12">
+    <div class="quiz-progress" id="quiz-12-progress"></div>
+    <div class="quiz-question" id="quiz-12-question"></div>
+    <div class="quiz-options" id="quiz-12-options"></div>
+    <input class="quiz-input" id="quiz-12-answer" type="text" placeholder="Введите букву ответа" />
+    <div class="rectangle-2" id="quiz-12-check">
+      <div class="div20" id="quiz-12-check-text">далее</div>
+    </div>
+    <div class="quiz-result" id="quiz-12-result"></div>
+    <div class="rectangle-2" id="quiz-12-restart" style="display: none;">
+      <div class="div20">пройти заново</div>
+    </div>
+  </div>
+
+  <div class="quiz-1" id="quiz-13">
+    <div class="quiz-progress" id="quiz-13-progress"></div>
+    <div class="quiz-question" id="quiz-13-question"></div>
+    <div class="quiz-options" id="quiz-13-options"></div>
+    <input class="quiz-input" id="quiz-13-answer" type="text" placeholder="Введите букву ответа" />
+    <div class="rectangle-2" id="quiz-13-check">
+      <div class="div20" id="quiz-13-check-text">далее</div>
+    </div>
+    <div class="quiz-result" id="quiz-13-result"></div>
+    <div class="rectangle-2" id="quiz-13-restart" style="display: none;">
+      <div class="div20">пройти заново</div>
+    </div>
+  </div>
+
+  <div class="rectangle-2-test">
+    <div class="html">
+      Тест: Components
+      <br />
+    </div>
+    <div class="_5">Ответьте на 5 вопросов, чтобы завершить тему</div>
+    <div class="rectangle-2" id="start-quiz-2">
+      <div class="div20">пройти</div>
+    </div>
+  </div>
+
+  <div class="rectangle-3-test">
+    <div class="html">
+      Тест: Templates
+      <br />
+    </div>
+    <div class="_5">Ответьте на 5 вопросов, чтобы завершить тему</div>
+    <div class="rectangle-2" id="start-quiz-3">
+      <div class="div20">пройти</div>
+    </div>
+  </div>
+
+  <div class="rectangle-4-test">
+    <div class="html">
+      Тест: Directives
+      <br />
+    </div>
+    <div class="_5">Ответьте на 5 вопросов, чтобы завершить тему</div>
+    <div class="rectangle-2" id="start-quiz-4">
+      <div class="div20">пройти</div>
+    </div>
+  </div>
+
+  <div class="rectangle-5-test">
+    <div class="html">
+      Тест: Services
+      <br />
+    </div>
+    <div class="_5">Ответьте на 5 вопросов, чтобы завершить тему</div>
+    <div class="rectangle-2" id="start-quiz-5">
+      <div class="div20">пройти</div>
+    </div>
+  </div>
+
+  <div class="rectangle-6-test">
+    <div class="html">
+      Тест: Routing
+      <br />
+    </div>
+    <div class="_5">Ответьте на 5 вопросов, чтобы завершить тему</div>
+    <div class="rectangle-2" id="start-quiz-6">
+      <div class="div20">пройти</div>
+    </div>
+  </div>
+
+  <div class="rectangle-7-test">
+    <div class="html">
+      Тест: Forms
+      <br />
+    </div>
+    <div class="_5">Ответьте на 5 вопросов, чтобы завершить тему</div>
+    <div class="rectangle-2" id="start-quiz-7">
+      <div class="div20">пройти</div>
+    </div>
+  </div>
+
+  <div class="rectangle-8-test">
+    <div class="html">
+      Тест: HTTP
+      <br />
+    </div>
+    <div class="_5">Ответьте на 5 вопросов, чтобы завершить тему</div>
+    <div class="rectangle-2" id="start-quiz-8">
+      <div class="div20">пройти</div>
+    </div>
+  </div>
+
+  <div class="rectangle-9-test">
+    <div class="html">
+      Тест: RxJS
+      <br />
+    </div>
+    <div class="_5">Ответьте на 5 вопросов, чтобы завершить тему</div>
+    <div class="rectangle-2" id="start-quiz-9">
+      <div class="div20">пройти</div>
+    </div>
+  </div>
+
+  <div class="rectangle-10-test">
+    <div class="html">
+      Тест: Dependency Injection
+      <br />
+    </div>
+    <div class="_5">Ответьте на 5 вопросов, чтобы завершить тему</div>
+    <div class="rectangle-2" id="start-quiz-10">
+      <div class="div20">пройти</div>
+    </div>
+  </div>
+
+  <div class="rectangle-11-test">
+    <div class="html">
+      Тест: State Management
+      <br />
+    </div>
+    <div class="_5">Ответьте на 5 вопросов, чтобы завершить тему</div>
+    <div class="rectangle-2" id="start-quiz-11">
+      <div class="div20">пройти</div>
+    </div>
+  </div>
+
+  <div class="rectangle-12-test">
+    <div class="html">
+      Тест: Angular Material
+      <br />
+    </div>
+    <div class="_5">Ответьте на 5 вопросов, чтобы завершить тему</div>
+    <div class="rectangle-2" id="start-quiz-12">
+      <div class="div20">пройти</div>
+    </div>
+  </div>
+
+  <div class="rectangle-13-test">
+    <div class="html">
+      Тест: Advanced Angular
+      <br />
+    </div>
+    <div class="_5">Ответьте на 5 вопросов, чтобы завершить тему</div>
+    <div class="rectangle-2" id="start-quiz-13">
+      <div class="div20">пройти</div>
+    </div>
+  </div>
+    </div>
+  </div>
+  <div class="div18">
+  <a href="#" id="logoutBtn">выход</a>
+  </div>
+  <div class="div19"><a href="account.html">аккаунт</a></div>
+  <div class="rectangle-7"></div>
+  <div class="html2">Angular</div>
+</div>
+<script>
+// Объект с конфигурацией всех групп меню
+const userId = localStorage.getItem('userId');
+
+let angularProgress = [];
+
+if (!userId) {
+
+  window.location.href = 'sign-in.html';
+
+}
+
+async function loadAngularProgress() {
+
+  try {
+
+    const response = await fetch(
+      `http://localhost:3000/progress/${userId}/angular`
+    );
+
+    const progress =
+      await response.json();
+
+    angularProgress = progress;
+
+    console.log(
+      'ANGULAR PROGRESS:',
+      progress
+    );
+
+    updateTopicLocks();
+
+  }
+
+  catch(error) {
+
+    console.log(error);
+
+  }
+
+}
+
+const menuGroups = [
+    {
+        button: '.div',
+        elements: '.div13, .div14, .div15, .div16, .div17, .line-16, .line-17, .line-18, .line-19, .line-20, .line-21',
+        line: '.line-3',
+        minWidth: '214px',
+        maxWidth: '714px',
+      testBox: '.rectangle-1',
+      quizBox: '#quiz-1'
+    },
+    {
+        button: '.div2',
+        elements: '.div22, .div23, .div24, .div25, .div26, .line-22, .line-23, .line-24, .line-25, .line-26, .line-27',
+        line: '.line-4',
+        minWidth: '132px',
+        maxWidth: '714px',
+        testBox: '.rectangle-2-test',
+        quizBox: '#quiz-2'
+    },
+    {
+        button: '.div3',
+        elements: '.div27, .div28, .div29, .div30, .div31, .line-28, .line-29, .line-30, .line-31, .line-32, .line-33',
+        line: '.line-5',
+        minWidth: '110px',
+        maxWidth: '714px',
+      testBox: '.rectangle-3-test',
+      quizBox: '#quiz-3'
+    },
+    {
+        button: '.div4',
+        elements: '.div32, .div33, .div34, .div35, .div36, .line-34, .line-35, .line-36, .line-37, .line-38, .line-39',
+        line: '.line-6',
+        minWidth: '201px',
+        maxWidth: '714px',
+      testBox: '.rectangle-4-test',
+      quizBox: '#quiz-4'
+    },
+    {
+        button: '.div5',
+        elements: '.div37, .div38, .div39, .div40, .div41, .line-40, .line-41, .line-42, .line-43, .line-44, .line-45',
+        line: '.line-7',
+        minWidth: '100px',
+        maxWidth: '714px',
+      testBox: '.rectangle-5-test',
+      quizBox: '#quiz-5'
+    },
+    {
+        button: '.div6',
+        elements: '.div42, .div43, .div44, .div45, .div46, .line-46, .line-47, .line-48, .line-49, .line-50, .line-51',
+        line: '.line-8',
+        minWidth: '300px',
+        maxWidth: '714px',
+      testBox: '.rectangle-6-test',
+      quizBox: '#quiz-6'
+    },
+    {
+        button: '.div7',
+        elements: '.div47, .div48, .div49, .div50, .div51, .line-52, .line-53, .line-54, .line-55, .line-56, .line-57',
+        line: '.line-9',
+        minWidth: '253px',
+        maxWidth: '714px',
+      testBox: '.rectangle-7-test',
+      quizBox: '#quiz-7'
+    },
+    {
+        button: '.div8',
+        elements: '.div52, .div53, .div54, .div55, .div56, .line-58, .line-59, .line-60, .line-61, .line-62, .line-63',
+        line: '.line-10',
+        minWidth: '90px',
+        maxWidth: '714px',
+      testBox: '.rectangle-8-test',
+      quizBox: '#quiz-8'
+    },
+    {
+        button: '.div9',
+        elements: '.div57, .div58, .div59, .div60, .div61, .line-64, .line-65, .line-66, .line-67, .line-68, .line-69',
+        line: '.line-11',
+        minWidth: '117px',
+        maxWidth: '714px',
+      testBox: '.rectangle-9-test',
+      quizBox: '#quiz-9'
+    },
+    {
+        button: '.seo',
+        elements: '.div62, .div63, .div64, .div65, .div66, .line-70, .line-71, .line-72, .line-73, .line-74, .line-75',
+        line: '.line-12',
+        minWidth: '201px',
+        maxWidth: '714px',
+      testBox: '.rectangle-10-test',
+      quizBox: '#quiz-10'
+    },
+    {
+        button: '.div10',
+        elements: '.div67, .div68, .div69, .div70, .div71, .line-76, .line-77, .line-78, .line-79, .line-80, .line-81',
+        line: '.line-13',
+        minWidth: '253px',
+        maxWidth: '714px',
+      testBox: '.rectangle-11-test',
+      quizBox: '#quiz-11'
+    },
+    {
+        button: '.div11',
+        elements: '.div72, .div73, .div74, .div75, .div76, .line-82, .line-83, .line-84, .line-85, .line-86, .line-87',
+        line: '.line-14',
+        minWidth: '143px',
+        maxWidth: '714px',
+      testBox: '.rectangle-12-test',
+      quizBox: '#quiz-12'
+    },
+    {
+        button: '.div12',
+        elements: '.div77, .div78, .div79, .div80, .div81, .line-88, .line-89, .line-90, .line-91, .line-92, .line-93',
+        line: '.line-15',
+        minWidth: '120px',
+        maxWidth: '714px',
+      testBox: '.rectangle-13-test',
+      quizBox: '#quiz-13'
+    }
+];
+
+function updateTopicLocks() {
+
+  document
+    .querySelectorAll('.topic')
+    .forEach(topic => {
+
+      const topicId =
+        Number(topic.dataset.topic);
+
+      const topicData =
+        angularProgress.find(
+          item =>
+            item.topic_id === topicId
+        );
+
+      if (
+        topicData &&
+        !topicData.unlocked
+      ) {
+
+        topic.style.opacity = '0.4';
+
+        topic.style.cursor =
+          'default';
+
+      }
+
+      else {
+
+        topic.style.opacity = '1';
+
+        topic.style.cursor =
+          'pointer';
+
+      }
+
+    });
+
+}
+
+// Функция для закрытия всех меню кроме текущего
+function closeAllMenus(exceptIndex) {
+    menuGroups.forEach((group, index) => {
+        if (index !== exceptIndex) {
+            const elements = document.querySelectorAll(group.elements);
+            elements.forEach(el => {
+                el.style.display = 'none';
+            });
+            document.querySelector(group.line).style.width = group.minWidth;
+            // Скрываем rectangle-1 если закрываем меню "основы"
+            if (group.testBox) {
+                document.querySelector(group.testBox).style.display = 'none';
+            }
+            if (group.quizBox) {
+              document.querySelector(group.quizBox).style.display = 'none';
+            }
+        }
+    });
+}
+
+// Добавляем слушатели на каждую кнопку
+menuGroups.forEach((group, index) => {
+    const button = document.querySelector(group.button);
+    button.addEventListener('click', function() {
+      const topicId =
+  button.dataset.topic;
+
+const topicData =
+  angularProgress.find(
+    topic =>
+      topic.topic_id == topicId
+  );
+
+if (
+  topicData &&
+  !topicData.unlocked
+) {
+
+  return;
+
+}
+        const elements = document.querySelectorAll(group.elements);
+        const anyVisible = Array.from(elements).some(el => el.style.display === 'block');
+        
+        if (anyVisible) {
+            // Если меню открыто, закрываем его
+            elements.forEach(el => {
+                el.style.display = 'none';
+            });
+            document.querySelector(group.line).style.width = group.minWidth;
+            // Если это меню "основы", скрываем тестовый блок
+            if (group.testBox) {
+                document.querySelector(group.testBox).style.display = 'none';
+            }
+            if (group.quizBox) {
+              document.querySelector(group.quizBox).style.display = 'none';
+            }
+        } else {
+            // Если меню закрыто, закрываем все остальные и открываем это
+            closeAllMenus(index);
+            elements.forEach(el => {
+                el.style.display = 'block';
+            });
+            document.querySelector(group.line).style.width = group.maxWidth;
+            // Если это меню "основы", показываем тестовый блок
+            if (group.testBox) {
+                document.querySelector(group.testBox).style.display = 'flex';
+            }
+            if (group.quizBox) {
+              document.querySelector(group.quizBox).style.display = 'none';
+            }
+        }
+    });
+});
+
+      const startQuiz1Button = document.querySelector('#start-quiz-1');
+      const quiz1Box = document.querySelector('#quiz-1');
+      const quiz1Progress = document.querySelector('#quiz-1-progress');
+      const quiz1Question = document.querySelector('#quiz-1-question');
+      const quiz1Options = document.querySelector('#quiz-1-options');
+      const quiz1Answer = document.querySelector('#quiz-1-answer');
+      const quiz1Check = document.querySelector('#quiz-1-check');
+      const quiz1CheckText = document.querySelector('#quiz-1-check-text');
+      const quiz1Result = document.querySelector('#quiz-1-result');
+      const quiz1Restart = document.querySelector('#quiz-1-restart');
+
+const quiz1Questions = [
+  {
+    question: 'Для чего используется Angular CLI?',
+    options: [
+      'A) Для стилизации',
+      'B) Для создания и запуска Angular проекта',
+      'C) Для работы с API',
+      'D) Для хранения данных'
+    ],
+    correctIndex: 1,
+    correctAnswerText: 'B'
+  },
+  {
+    question: 'На каком языке в основном пишут Angular приложения?',
+    options: [
+      'A) Python',
+      'B) Java',
+      'C) TypeScript',
+      'D) PHP'
+    ],
+    correctIndex: 2,
+    correctAnswerText: 'C'
+  },
+  {
+    question: 'Как создать новый Angular проект?',
+    options: [
+      'A) npm create angular',
+      'B) ng new app',
+      'C) angular init',
+      'D) create-angular'
+    ],
+    correctIndex: 1,
+    correctAnswerText: 'B'
+  },
+  {
+    question: 'Что такое module в Angular?',
+    options: [
+      'A) CSS файл',
+      'B) Система маршрутов',
+      'C) Контейнер для компонентов и сервисов',
+      'D) База данных'
+    ],
+    correctIndex: 2,
+    correctAnswerText: 'C'
+  },
+  {
+    question: 'Что запускает Angular приложение?',
+    options: [
+      'A) bootstrapModule',
+      'B) renderApp',
+      'C) startAngular',
+      'D) ngRun'
+    ],
+    correctIndex: 0,
+    correctAnswerText: 'A'
+  }
+];
+
+      let quiz1CurrentIndex = 0;
+      let quiz1Score = 0;
+      let quiz1AwaitingNext = false;
+      let quiz1SelectedIndex = null;
+
+      function renderQuiz1Question() {
+        const current = quiz1Questions[quiz1CurrentIndex];
+        if (!current) {
+          return;
+        }
+
+        if (quiz1Progress) {
+          quiz1Progress.textContent = '';
+        }
+        if (quiz1Question) {
+          quiz1Question.textContent = current.question;
+        }
+        if (quiz1Options) {
+          quiz1Options.innerHTML = '';
+          current.options.forEach(function(optionText, index) {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'quiz-option-btn' + (quiz1SelectedIndex === index ? ' is-selected' : '');
+            button.textContent = optionText;
+            button.addEventListener('click', function() {
+              quiz1SelectedIndex = index;
+              renderQuiz1Question();
+            });
+            quiz1Options.appendChild(button);
+          });
+        }
+        if (quiz1Answer) {
+          quiz1Answer.style.display = 'none';
+        }
+        if (quiz1Result) {
+          quiz1Result.textContent = '';
+        }
+        if (quiz1Check) {
+          quiz1Check.style.display = 'flex';
+        }
+        if (quiz1CheckText) {
+          quiz1CheckText.textContent = 'далее';
+        }
+
+        quiz1AwaitingNext = false;
+      }
+
+      function resetQuiz1() {
+        quiz1CurrentIndex = 0;
+        quiz1Score = 0;
+        quiz1AwaitingNext = false;
+        quiz1SelectedIndex = null;
+        renderQuiz1Question();
+      }
+
+      if (startQuiz1Button && quiz1Box) {
+        startQuiz1Button.addEventListener('click', function() {
+          const basicsTestBox = document.querySelector('.rectangle-1');
+          basicsTestBox.style.display = 'none';
+          quiz1Box.style.display = 'flex';
+          resetQuiz1();
+        });
+      }
+
+      if (quiz1Check && quiz1Answer && quiz1Result && quiz1CheckText) {
+        quiz1Check.addEventListener('click', async function() {
+          if (quiz1SelectedIndex === null) {
+            quiz1Result.textContent = 'Сначала выберите вариант ответа.';
+            quiz1Result.style.color = '#ff9b9b';
+            return;
+          }
+
+          const current = quiz1Questions[quiz1CurrentIndex];
+          const isCorrect = quiz1SelectedIndex === current.correctIndex;
+
+        if (isCorrect) {
+
+          quiz1Score += 1;
+
+          localStorage.setItem(
+            'lastActivity',
+          new Date().getTime()
+        );
+
+}
+
+          quiz1Result.textContent = '';
+          quiz1CurrentIndex += 1;
+          quiz1SelectedIndex = null;
+
+          if (quiz1CurrentIndex < quiz1Questions.length) {
+            renderQuiz1Question();
+          } else {
+            const isPassed = quiz1Score >= 3;
+            const bestScore =
+              Number(localStorage.getItem('quiz1BestScore')) || 0;
+
+            if (quiz1Score > bestScore) {
+
+              localStorage.setItem(
+                'quiz1BestScore',
+                quiz1Score
+              );
+
+            }
+            if (isPassed) {
+              await completeTopic(2);
+            }
+            if (quiz1Progress) {
+              quiz1Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
+            }
+            if (quiz1Question) {
+              quiz1Question.textContent = 'Результат: ' + quiz1Score + ' из ' + quiz1Questions.length;
+            }
+            if (quiz1Options) {
+              quiz1Options.textContent = isPassed
+                ? 'Вы ответили правильно на 3 и более вопросов.'
+                : 'Для прохождения нужно минимум 3 правильных ответа.';
+            }
+            quiz1Result.textContent = isPassed
+              ? 'Поздравляем, тест засчитан. Нажмите "пройти" снова, чтобы начать заново.'
+              : 'Тест не засчитан. Нажмите "пройти" снова, чтобы попробовать еще раз.';
+            quiz1Result.style.color = isPassed ? '#00994d' : '#780002';
+            quiz1Answer.style.display = 'none';
+            quiz1Check.style.display = 'none';
+            if (quiz1Restart) {
+              quiz1Restart.style.display = 'flex';
+            }
+          }
+        });
+      }
+
+      if (quiz1Restart) {
+        quiz1Restart.addEventListener('click', function() {
+          const basicsTestBox = document.querySelector('.rectangle-1');
+          if (basicsTestBox) {
+            basicsTestBox.style.display = 'flex';
+          }
+          if (quiz1Box) {
+            quiz1Box.style.display = 'none';
+          }
+          if (quiz1Restart) {
+            quiz1Restart.style.display = 'none';
+          }
+          resetQuiz1();
+        });
+      }
+
+      // Добавим остальные quiz с примерами
+const quizData = {
+  2: [
+    {
+      question: 'Какой декоратор используется для создания компонента?',
+      options: [
+        'A) @Injectable',
+        'B) @Component',
+        'C) @NgModule',
+        'D) @Directive'
+      ],
+      correctIndex: 1,
+      correctAnswerText: 'B'
+    },
+    {
+      question: 'Что задает selector?',
+      options: [
+        'A) URL',
+        'B) CSS',
+        'C) HTML тег компонента',
+        'D) API'
+      ],
+      correctIndex: 2,
+      correctAnswerText: 'C'
+    },
+    {
+      question: 'Где хранится HTML компонента?',
+      options: [
+        'A) template',
+        'B) selector',
+        'C) providers',
+        'D) imports'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что подключает стили компонента?',
+      options: [
+        'A) cssFiles',
+        'B) styleUrls',
+        'C) styleImport',
+        'D) styleComponent'
+      ],
+      correctIndex: 1,
+      correctAnswerText: 'B'
+    },
+    {
+      question: 'Как называется жизненный цикл Angular?',
+      options: [
+        'A) lifecycle hooks',
+        'B) render loop',
+        'C) async hooks',
+        'D) app cycle'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    }
+  ],
+
+  3: [
+    {
+      question: 'Что делает interpolation?',
+      options: [
+        'A) Создает сервис',
+        'B) Вставляет данные в HTML',
+        'C) Выполняет HTTP запрос',
+        'D) Создает роут'
+      ],
+      correctIndex: 1,
+      correctAnswerText: 'B'
+    },
+    {
+      question: 'Как выглядит interpolation?',
+      options: [
+        'A) [[data]]',
+        'B) {{data}}',
+        'C) ((data))',
+        'D) <%data%>'
+      ],
+      correctIndex: 1,
+      correctAnswerText: 'B'
+    },
+    {
+      question: 'Что делает property binding?',
+      options: [
+        'A) Привязывает свойство HTML элемента',
+        'B) Создает компонент',
+        'C) Удаляет DOM',
+        'D) Создает API'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Как выглядит event binding?',
+      options: [
+        'A) [click]',
+        'B) {click}',
+        'C) (click)',
+        'D) <click>'
+      ],
+      correctIndex: 2,
+      correctAnswerText: 'C'
+    },
+    {
+      question: 'Что делает two-way binding?',
+      options: [
+        'A) Двусторонняя привязка данных',
+        'B) Создает массив',
+        'C) Управляет роутами',
+        'D) Создает сервис'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    }
+  ],
+
+  4: [
+    {
+      question: 'Что делает *ngIf?',
+      options: [
+        'A) Создает цикл',
+        'B) Показывает элемент по условию',
+        'C) Загружает API',
+        'D) Создает сервис'
+      ],
+      correctIndex: 1,
+      correctAnswerText: 'B'
+    },
+    {
+      question: 'Для чего используется *ngFor?',
+      options: [
+        'A) Для циклов',
+        'B) Для запросов',
+        'C) Для роутинга',
+        'D) Для форм'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что делает ngClass?',
+      options: [
+        'A) Управляет CSS классами',
+        'B) Создает классы JS',
+        'C) Создает сервис',
+        'D) Управляет API'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что делает ngStyle?',
+      options: [
+        'A) Добавляет стили',
+        'B) Создает HTML',
+        'C) Удаляет DOM',
+        'D) Создает модуль'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Можно ли создавать свои directives?',
+      options: [
+        'A) Нет',
+        'B) Только в React',
+        'C) Да',
+        'D) Только через API'
+      ],
+      correctIndex: 2,
+      correctAnswerText: 'C'
+    }
+  ],
+
+  5: [
+    {
+      question: 'Какой декоратор используют сервисы?',
+      options: [
+        'A) @Service',
+        'B) @Injectable',
+        'C) @Provider',
+        'D) @Component'
+      ],
+      correctIndex: 1,
+      correctAnswerText: 'B'
+    },
+    {
+      question: 'Что такое singleton service?',
+      options: [
+        'A) Один экземпляр сервиса',
+        'B) CSS класс',
+        'C) HTTP метод',
+        'D) Angular модуль'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что делает dependency injection?',
+      options: [
+        'A) Внедряет зависимости',
+        'B) Создает HTML',
+        'C) Удаляет компоненты',
+        'D) Запускает сервер'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Где обычно регистрируются сервисы?',
+      options: [
+        'A) providers',
+        'B) styles',
+        'C) template',
+        'D) selector'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Для чего нужны shared services?',
+      options: [
+        'A) Для обмена данными',
+        'B) Для CSS',
+        'C) Для API',
+        'D) Для роутинга'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    }
+  ],
+
+  6: [
+    {
+      question: 'Что делает routerLink?',
+      options: [
+        'A) Переходит между страницами',
+        'B) Загружает API',
+        'C) Создает сервис',
+        'D) Добавляет CSS'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Где хранятся маршруты?',
+      options: [
+        'A) Routes',
+        'B) Components',
+        'C) Forms',
+        'D) Providers'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что отображает RouterOutlet?',
+      options: [
+        'A) Активный компонент маршрута',
+        'B) API',
+        'C) Форму',
+        'D) Стили'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что такое lazy loading?',
+      options: [
+        'A) Ленивая загрузка модулей',
+        'B) Медленный сервер',
+        'C) CSS оптимизация',
+        'D) Тип переменной'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что делают guards?',
+      options: [
+        'A) Защищают маршруты',
+        'B) Удаляют данные',
+        'C) Создают компоненты',
+        'D) Создают стили'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    }
+  ],
+
+  7: [
+    {
+      question: 'Что делает ngModel?',
+      options: [
+        'A) Двусторонняя привязка формы',
+        'B) Создает API',
+        'C) Создает роут',
+        'D) Удаляет DOM'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что такое FormControl?',
+      options: [
+        'A) Элемент управления формы',
+        'B) CSS класс',
+        'C) Angular модуль',
+        'D) HTTP запрос'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что объединяет FormGroup?',
+      options: [
+        'A) Компоненты',
+        'B) Контролы формы',
+        'C) Роуты',
+        'D) Сервисы'
+      ],
+      correctIndex: 1,
+      correctAnswerText: 'B'
+    },
+    {
+      question: 'Для чего validators?',
+      options: [
+        'A) Проверка формы',
+        'B) Создание API',
+        'C) Создание CSS',
+        'D) Работа с DOM'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Какие формы считаются более мощными?',
+      options: [
+        'A) Template forms',
+        'B) Reactive forms',
+        'C) HTML forms',
+        'D) CSS forms'
+      ],
+      correctIndex: 1,
+      correctAnswerText: 'B'
+    }
+  ],
+  8: [
+    {
+      question: 'Какой сервис используется для HTTP запросов?',
+      options: [
+        'A) FetchService',
+        'B) HttpClient',
+        'C) ApiService',
+        'D) RequestModule'
+      ],
+      correctIndex: 1,
+      correctAnswerText: 'B'
+    },
+    {
+      question: 'Какой метод получает данные?',
+      options: [
+        'A) POST',
+        'B) DELETE',
+        'C) GET',
+        'D) PATCH'
+      ],
+      correctIndex: 2,
+      correctAnswerText: 'C'
+    },
+    {
+      question: 'Какой метод отправляет данные?',
+      options: [
+        'A) POST',
+        'B) GET',
+        'C) LOAD',
+        'D) FETCH'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Для чего используются headers?',
+      options: [
+        'A) Для CSS',
+        'B) Для информации о запросе',
+        'C) Для HTML',
+        'D) Для роутинга'
+      ],
+      correctIndex: 1,
+      correctAnswerText: 'B'
+    },
+    {
+      question: 'Что делают interceptors?',
+      options: [
+        'A) Перехватывают HTTP запросы',
+        'B) Создают компоненты',
+        'C) Создают стили',
+        'D) Работают с DOM'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    }
+  ],
+
+  9: [
+    {
+      question: 'Что является основой RxJS?',
+      options: [
+        'A) Promise',
+        'B) Observable',
+        'C) Array',
+        'D) Object'
+      ],
+      correctIndex: 1,
+      correctAnswerText: 'B'
+    },
+    {
+      question: 'Что делает subscribe()?',
+      options: [
+        'A) Подписывается на Observable',
+        'B) Создает сервис',
+        'C) Создает форму',
+        'D) Управляет DOM'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Для чего используется pipe()?',
+      options: [
+        'A) Для обработки данных',
+        'B) Для CSS',
+        'C) Для HTML',
+        'D) Для маршрутов'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что делает оператор map?',
+      options: [
+        'A) Преобразует данные',
+        'B) Создает компонент',
+        'C) Создает сервис',
+        'D) Управляет роутами'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что делает switchMap?',
+      options: [
+        'A) Переключает Observable',
+        'B) Создает DOM',
+        'C) Создает CSS',
+        'D) Удаляет формы'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    }
+  ],
+
+  10: [
+    {
+      question: 'Что делает inject()?',
+      options: [
+        'A) Внедряет зависимость',
+        'B) Создает HTML',
+        'C) Удаляет компонент',
+        'D) Создает API'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Где указываются providers?',
+      options: [
+        'A) В metadata Angular',
+        'B) В CSS',
+        'C) В HTML',
+        'D) В SQL'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Для чего нужны injection tokens?',
+      options: [
+        'A) Для нестандартных зависимостей',
+        'B) Для CSS',
+        'C) Для шаблонов',
+        'D) Для DOM'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что такое hierarchy injection?',
+      options: [
+        'A) Иерархия внедрения зависимостей',
+        'B) Система роутов',
+        'C) CSS структура',
+        'D) База данных'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что чаще всего внедряют через DI?',
+      options: [
+        'A) Сервисы',
+        'B) CSS',
+        'C) HTML',
+        'D) Картинки'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    }
+  ],
+
+  11: [
+    {
+      question: 'Что такое signals?',
+      options: [
+        'A) Реактивное состояние',
+        'B) CSS класс',
+        'C) HTTP метод',
+        'D) Тип формы'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что такое NgRx?',
+      options: [
+        'A) State management библиотека',
+        'B) CSS framework',
+        'C) API сервер',
+        'D) Angular CLI'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что хранит store?',
+      options: [
+        'A) Глобальное состояние',
+        'B) HTML',
+        'C) CSS',
+        'D) DOM'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что делают actions?',
+      options: [
+        'A) Описывают изменения state',
+        'B) Создают API',
+        'C) Создают шаблоны',
+        'D) Создают роуты'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что делают selectors?',
+      options: [
+        'A) Получают данные из store',
+        'B) Создают CSS',
+        'C) Создают DOM',
+        'D) Создают формы'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    }
+  ],
+
+  12: [
+    {
+      question: 'Что такое Angular Material?',
+      options: [
+        'A) UI библиотека',
+        'B) База данных',
+        'C) HTTP сервер',
+        'D) CSS reset'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что создает mat-button?',
+      options: [
+        'A) Кнопку',
+        'B) Форму',
+        'C) Роут',
+        'D) API'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Для чего используется mat-card?',
+      options: [
+        'A) Карточка интерфейса',
+        'B) HTTP запрос',
+        'C) База данных',
+        'D) Router'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что делают themes?',
+      options: [
+        'A) Настраивают внешний вид',
+        'B) Создают API',
+        'C) Создают сервисы',
+        'D) Создают формы'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Как подключаются иконки?',
+      options: [
+        'A) mat-icons',
+        'B) icons.css',
+        'C) iconHTML',
+        'D) material-svg'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    }
+  ],
+
+  13: [
+    {
+      question: 'Что такое standalone components?',
+      options: [
+        'A) Компоненты без NgModule',
+        'B) Отдельный сервер',
+        'C) CSS модуль',
+        'D) API компонент'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что означает SSR?',
+      options: [
+        'A) Server Side Rendering',
+        'B) Style Sheet Render',
+        'C) Script System Router',
+        'D) Static Server Response'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что делает hydration?',
+      options: [
+        'A) Восстанавливает приложение на клиенте',
+        'B) Создает CSS',
+        'C) Удаляет DOM',
+        'D) Создает API'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Для чего нужна performance optimization?',
+      options: [
+        'A) Для ускорения приложения',
+        'B) Для создания HTML',
+        'C) Для CSS',
+        'D) Для API'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    },
+    {
+      question: 'Что помогает уменьшить размер Angular приложения?',
+      options: [
+        'A) Lazy loading',
+        'B) Inline CSS',
+        'C) Большие картинки',
+        'D) Дублирование кода'
+      ],
+      correctIndex: 0,
+      correctAnswerText: 'A'
+    }
+  ]
+};
+
+async function completeTopic(topicId) {
+
+  try {
+
+    await fetch(
+      'http://localhost:3000/progress/complete',
+      {
+
+        method: 'POST',
+
+        headers: {
+          'Content-Type':
+            'application/json'
+        },
+
+        body: JSON.stringify({
+
+          userId: userId,
+
+          topicId: topicId,
+
+          course: 'angular'
+
+        })
+
+      }
+    );
+
+    await loadAngularProgress();
+
+  }
+
+  catch(error) {
+
+    console.log(error);
+
+  }
+
+}
+
+      // Функция для создания quiz
+      function createQuiz(quizNumber) {
+        const questions = quizData[quizNumber];
+        if (!questions) return;
+
+        const startButton = document.querySelector(`#start-quiz-${quizNumber}`);
+        const quizBox = document.querySelector(`#quiz-${quizNumber}`);
+        const progress = document.querySelector(`#quiz-${quizNumber}-progress`);
+        const question = document.querySelector(`#quiz-${quizNumber}-question`);
+        const options = document.querySelector(`#quiz-${quizNumber}-options`);
+        const answer = document.querySelector(`#quiz-${quizNumber}-answer`);
+        const check = document.querySelector(`#quiz-${quizNumber}-check`);
+        const checkText = document.querySelector(`#quiz-${quizNumber}-check-text`);
+        const result = document.querySelector(`#quiz-${quizNumber}-result`);
+        const restart = document.querySelector(`#quiz-${quizNumber}-restart`);
+
+        let currentIndex = 0;
+        let score = 0;
+        let awaitingNext = false;
+        let selectedIndex = null;
+
+        function renderQuestion() {
+          const current = questions[currentIndex];
+          if (!current) return;
+
+          if (progress) progress.textContent = '';
+          if (question) question.textContent = current.question;
+          if (options) {
+            options.innerHTML = '';
+            current.options.forEach(function(optionText, index) {
+              const button = document.createElement('button');
+              button.type = 'button';
+              button.className = 'quiz-option-btn' + (selectedIndex === index ? ' is-selected' : '');
+              button.textContent = optionText;
+              button.addEventListener('click', function() {
+                selectedIndex = index;
+                renderQuestion();
+              });
+              options.appendChild(button);
+            });
+          }
+          if (answer) answer.style.display = 'none';
+          if (result) result.textContent = '';
+          if (check) check.style.display = 'flex';
+          if (checkText) checkText.textContent = 'далее';
+          awaitingNext = false;
+        }
+
+        function resetQuiz() {
+          currentIndex = 0;
+          score = 0;
+          awaitingNext = false;
+          selectedIndex = null;
+          renderQuestion();
+        }
+
+        if (startButton && quizBox) {
+          startButton.addEventListener('click', function() {
+            const testBox = document.querySelector(`.rectangle-${quizNumber}-test`);
+            testBox.style.display = 'none';
+            quizBox.style.display = 'flex';
+            resetQuiz();
+          });
+        }
+
+        if (check && answer && result && checkText) {
+          check.addEventListener('click', async function() {
+            if (selectedIndex === null) {
+              result.textContent = 'Сначала выберите вариант ответа.';
+              result.style.color = '#ff9b9b';
+              return;
+            }
+
+            const current = questions[currentIndex];
+            const isCorrect = selectedIndex === current.correctIndex;
+
+            if (isCorrect) {
+              score += 1;
+              localStorage.setItem('lastActivity', new Date().getTime());
+            }
+
+            result.textContent = '';
+            currentIndex += 1;
+            selectedIndex = null;
+
+            if (currentIndex < questions.length) {
+              renderQuestion();
+            } else {
+              const isPassed = score >= 3;
+              const bestScore = Number(localStorage.getItem(`quiz${quizNumber}BestScore`)) || 0;
+
+              if (score > bestScore) {
+                localStorage.setItem(`quiz${quizNumber}BestScore`, score);
+              }
+              if (isPassed) {
+                await completeTopic(quizNumber);
+              }
+              if (progress) progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
+              if (question) question.textContent = 'Результат: ' + score + ' из ' + questions.length;
+              if (options) options.textContent = isPassed ? 'Вы ответили правильно на 3 и более вопросов.' : 'Для прохождения нужно минимум 3 правильных ответа.';
+              result.textContent = isPassed ? 'Поздравляем, тест засчитан. Нажмите "пройти" снова, чтобы начать заново.' : 'Тест не засчитан. Нажмите "пройти" снова, чтобы попробовать еще раз.';
+              result.style.color = isPassed ? '#00994d' : '#780002';
+              answer.style.display = 'none';
+              check.style.display = 'none';
+              if (restart) restart.style.display = 'flex';
+            }
+          });
+        }
+
+        if (restart) {
+          restart.addEventListener('click', function() {
+            const testBox = document.querySelector(`.rectangle-${quizNumber}-test`);
+            if (testBox) testBox.style.display = 'flex';
+            if (quizBox) quizBox.style.display = 'none';
+            if (restart) restart.style.display = 'none';
+            resetQuiz();
+          });
+        }
+      }
+
+      // Создаем все quiz
+      for (let i = 2; i <= 13; i++) {
+        createQuiz(i);
+      }
+
+      loadAngularProgress();
+
+    </script>
+  <script src="responsive.js" defer></script>
+  </body>
+</html>

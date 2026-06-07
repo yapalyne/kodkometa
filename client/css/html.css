@@ -1,0 +1,1772 @@
+/* Применяет модель box-sizing: border-box ко всем элементам внутри .desktop и самому .desktop,
+   чтобы padding и border не увеличивали размеры элементов */
+.desktop,
+.desktop * {
+  box-sizing: border-box;
+}
+
+/* Сбрасывает отступы и задаёт полный размер для body и html, убирает скролл */
+body, html {
+  margin: 0; /* Убирает внешние отступы */
+  padding: 0; /* Убирает внутренние отступы */
+  width: 100%; /* Ширина 100% от родителя */
+  height: 100%; /* Высота 100% от родителя */
+  overflow: hidden; /* Убирает скролл */
+}
+
+a { /* Стили для всех ссылок */
+  text-decoration: none; /* Убирает подчеркивание */
+  color: #dcdcdc; /* цвет */
+}
+
+/* Основной контейнер .desktop: тёмный фон, полный размер экрана, относительное позиционирование */
+.desktop {
+  background: #1e1e1e; /* Цвет фона */
+  width: 100vw; /* Ширина 100% от ширины окна */
+  height: 100vh; /* Высота 100% от высоты окна */
+  position: relative; /* Относительное позиционирование для дочерних элементов */
+  overflow: hidden; /* Убирает скролл */
+}
+
+/* Линия 1: вертикальная линия с поворотом, абсолютное позиционирование */
+.line-1 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 740px; /* Ширина линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 179px; /* Отступ слева */
+  bottom: 66px; /* Отступ снизу */
+  top: 860px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(-89.91deg) scale(1, 1); /* Поворот и масштаб */
+}
+
+/* Линия 2 (html): горизонтальная линия, абсолютное позиционирование */
+.line-2 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 149px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 151px; /* Отступ слева */
+  top: 119px; /* Отступ сверху */
+}
+
+/* Линия 3 (основы): горизонтальная линия, абсолютное позиционирование */
+.line-3 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 214px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 150px; /* Отступ слева */
+  top: 176px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(0deg) scale(1, 1); /* Поворот и масштаб */
+}
+
+/* Линия 4 (мета): горизонтальная линия, абсолютное позиционирование */
+.line-4 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 132px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 150px; /* Отступ слева */
+  top: 233px; /* Отступ сверху */
+}
+
+/* Линия 5 (семантика): горизонтальная линия, абсолютное позиционирование */
+.line-5 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 110px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 150px; /* Отступ слева */
+  top: 290px; /* Отступ сверху */
+}
+
+/* Линия 6 (формы): горизонтальная линия, абсолютное позиционирование */
+.line-6 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 201px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 149px; /* Отступ слева */
+  top: 347px; /* Отступ сверху */
+}
+
+/* Линия 7 (медиа): горизонтальная линия, абсолютное позиционирование */
+.line-7 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 100px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 149px; /* Отступ слева */
+  top: 404px; /* Отступ сверху */
+}
+
+/* Линия 8 (таблицы): горизонтальная линия, абсолютное позиционирование */
+.line-8 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 300px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 151px; /* Отступ слева */
+  top: 461px; /* Отступ сверху */
+}
+
+/* Линия 9 (списки): горизонтальная линия, абсолютное позиционирование */
+.line-9 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 253px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 151px; /* Отступ слева */
+  top: 518px; /* Отступ сверху */
+}
+
+/* Линия 10 (ссылки): горизонтальная линия, абсолятное позиционирование */
+.line-10 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 90px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 150px; /* Отступ слева */
+  top: 575px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(0deg) scale(1, 1); /* Поворот и масштаб */
+}
+
+/* Линия 11 (доступность): горизонтальная линия, абсолютное позиционирование */
+.line-11 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 117px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 150px; /* Отступ слева */
+  top: 632px; /* Отступ сверху */
+}
+
+/* Линия 12 (оптимизация): горизонтальная линия, абсолютное позиционирование */
+.line-12 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 201px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 150px; /* Отступ слева */
+  top: 689px; /* Отступ сверху */
+}
+
+/* Линия 13 (расшир): горизонтальная линия, абсолютное позиционирование */
+.line-13 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 253px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 151px; /* Отступ слева */
+  top: 746px; /* Отступ сверху */
+}
+
+/* Линия 14 (инструменты): горизонтальная линия, абсолютное позиционирование */
+.line-14 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 143px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 151px; /* Отступ слева */
+  top: 803px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(0deg) scale(1, 1); /* Поворот и масштаб */
+}
+
+/* Линия 15 (совместимость): горизонтальная линия, абсолютное позиционирование */
+.line-15 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 120px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 150px; /* Отступ слева */
+  top: 860px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(0deg) scale(1, 1); /* Поворот и масштаб */
+}
+
+/* Линия 16: вертикальная линия, абсолютное позиционирование, поворот */
+.line-16 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 285px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 760px; /* Отступ слева */
+  top: 461px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(-90deg) scale(1, 1); /* Поворот и масштаб */
+  display: none; /* Скрыт по умолчанию */
+}
+
+/* Линия 17 (структура): горизонтальная линия, абсолютное позиционирование */
+.line-17 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 132px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 730px; /* Отступ слева */
+  top: 233px; /* Отступ сверху */
+  display: none; /* Скрыт по умолчанию */
+}
+
+/* Линия 18 (элементы): горизонтальная линия, абсолютное позиционирование */
+.line-18 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 132px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 730px; /* Отступ слева */
+  top: 290px; /* Отступ сверху */
+  display: none; /* Скрыт по умолчанию */
+}
+
+/* Линия 19 (атрибуты): горизонтальная линия, абсолютное позиционирование */
+.line-19 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 132px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 730px; /* Отступ слева */
+  top: 347px; /* Отступ сверху */
+  display: none; /* Скрыт по умолчанию */
+}
+
+/* Линия 20 (комментарии): горизонтальная линия, абсолютное позиционирование */
+.line-20 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 132px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 730px; /* Отступ слева */
+  top: 404px; /* Отступ сверху */
+  display: none; /* Скрыт по умолчанию */
+}
+
+/* Линия 21 (символы): горизонтальная линия, абсолютное позиционирование */
+.line-21 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 132px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 730px; /* Отступ слева */
+  top: 461px; /* Отступ сверху (относительно центра) */
+  display: none; /* Скрыт по умолчанию */
+}
+
+/* Набор дополнительных Метаинформация / новых линий */
+.div22, .div23, .div24, .div25, .div26 {
+  color: #dcdcdc;
+  text-align: left;
+  font-family: "Cruinn";
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: absolute;
+  left: 770px;
+  width: auto;
+  height: 60px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.div22 { top: 249px; }
+.div23 { top: 306px; }
+.div24 { top: 363px; }
+.div25 { top: 420px; }
+.div26 { top: 477px; }
+
+.line-22, .line-23, .line-24, .line-25, .line-26 {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #dcdcdc;
+  border-width: 1px 0 0 0;
+  width: 132px;
+  height: 0px;
+  position: absolute;
+  left: 730px;
+  display: none;
+}
+
+.line-22 { top: 290px; }
+.line-23 { top: 347px; }
+.line-24 { top: 404px; }
+.line-25 { top: 461px; }
+.line-26 { top: 518px; }
+
+/* Линия 27: вертикальная линия для метаинформации, абсолютное позиционирование, поворот */
+.line-27 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 285px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 760px; /* Отступ слева */
+  top: 519px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(-90deg) scale(1, 1); /* Поворот и масштаб */
+  display: none; /* Скрыт по умолчанию */
+}
+
+
+
+/* Набор дополнительных Семантика / новых линий */
+.div27, .div28, .div29, .div30, .div31 {
+  color: #dcdcdc;
+  text-align: left;
+  font-family: "Cruinn";
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: absolute;
+  left: 770px;
+  width: auto;
+  height: 60px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.div27 { top: 306px; }
+.div28 { top: 363px; }
+.div29 { top: 420px; }
+.div30 { top: 477px; }
+.div31 { top: 534px; }
+
+.line-28, .line-29, .line-30, .line-31, .line-32 {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #dcdcdc;
+  border-width: 1px 0 0 0;
+  width: 132px;
+  height: 0px;
+  position: absolute;
+  left: 730px;
+  display: none;
+}
+
+.line-28 { top: 347px; }
+.line-29 { top: 404px; }
+.line-30 { top: 461px; }
+.line-31 { top: 518px; }
+.line-32 { top: 575px; }
+
+/* Линия 33: вертикальная линия для семантики, абсолютное позиционирование, поворот */
+.line-33 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 285px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 760px; /* Отступ слева */
+  top: 576px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(-90deg) scale(1, 1); /* Поворот и масштаб */
+  display: none; /* Скрыт по умолчанию */
+}
+
+
+/* Набор дополнительных Формы / новых линий */
+.div32, .div33, .div34, .div35, .div36 {
+  color: #dcdcdc;
+  text-align: left;
+  font-family: "Cruinn";
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: absolute;
+  left: 770px;
+  width: auto;
+  height: 60px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.div32 { top: 363px; }
+.div33 { top: 420px; }
+.div34 { top: 477px; }
+.div35 { top: 534px; }
+.div36 { top: 591px; }
+
+.line-34, .line-35, .line-36, .line-37, .line-38 {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #dcdcdc;
+  border-width: 1px 0 0 0;
+  width: 132px;
+  height: 0px;
+  position: absolute;
+  left: 730px;
+  display: none;
+}
+
+.line-34 { top: 404px; }
+.line-35 { top: 461px; }
+.line-36 { top: 518px; }
+.line-37 { top: 575px; }
+.line-38 { top: 632px; }
+
+/* Линия 39: вертикальная линия для семантики, абсолютное позиционирование, поворот */
+.line-39 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 285px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 760px; /* Отступ слева */
+  top: 632px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(-90deg) scale(1, 1); /* Поворот и масштаб */
+  display: none; /* Скрыт по умолчанию */
+}
+
+
+/* Набор дополнительных Медиа / новых линий */
+.div37, .div38, .div39, .div40, .div41 {
+  color: #dcdcdc;
+  text-align: left;
+  font-family: "Cruinn";
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: absolute;
+  left: 770px;
+  width: auto;
+  height: 60px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.div37 { top: 420px; }
+.div38 { top: 477px; }
+.div39 { top: 534px; }
+.div40 { top: 591px; }
+.div41 { top: 648px; }
+
+.line-40, .line-41, .line-42, .line-43, .line-44 {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #dcdcdc;
+  border-width: 1px 0 0 0;
+  width: 132px;
+  height: 0px;
+  position: absolute;
+  left: 730px;
+  display: none;
+}
+
+.line-40 { top: 461px; }
+.line-41 { top: 518px; }
+.line-42 { top: 575px; }
+.line-43 { top: 632px; }
+.line-44 { top: 689px; }
+
+/* Линия 45: вертикальная линия для семантики, абсолютное позиционирование, поворот */
+.line-45 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 285px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 760px; /* Отступ слева */
+  top: 690px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(-90deg) scale(1, 1); /* Поворот и масштаб */
+  display: none; /* Скрыт по умолчанию */
+}
+
+/* Набор дополнительных Таблицы / новых линий */
+.div42, .div43, .div44, .div45, .div46 {
+  color: #dcdcdc;
+  text-align: left;
+  font-family: "Cruinn";
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: absolute;
+  left: 770px;
+  width: auto;
+  height: 60px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.div42 { top: 477px; }
+.div43 { top: 534px; }
+.div44 { top: 591px; }
+.div45 { top: 648px; }
+.div46 { top: 705px; }
+
+.line-46, .line-47, .line-48, .line-49, .line-50 {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #dcdcdc;
+  border-width: 1px 0 0 0;
+  width: 132px;
+  height: 0px;
+  position: absolute;
+  left: 730px;
+  display: none;
+}
+
+.line-46 { top: 518px; }
+.line-47 { top: 575px; }
+.line-48 { top: 632px; }
+.line-49 { top: 689px; }
+.line-50 { top: 746px; }
+
+/* Линия 51: вертикальная линия для семантики, абсолютное позиционирование, поворот */
+.line-51 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 285px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 760px; /* Отступ слева */
+  top: 746px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(-90deg) scale(1, 1); /* Поворот и масштаб */
+  display: none; /* Скрыт по умолчанию */
+}
+
+/* Набор дополнительных Списки / новых линий */
+.div47, .div48, .div49, .div50, .div51 {
+  color: #dcdcdc;
+  text-align: left;
+  font-family: "Cruinn";
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: absolute;
+  left: 770px;
+  width: auto;
+  height: 60px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.div47 { top: 249px; }
+.div48 { top: 306px; }
+.div49 { top: 363px; }
+.div50 { top: 420px; }
+.div51 { top: 477px; }
+
+.line-52, .line-53, .line-54, .line-55, .line-56 {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #dcdcdc;
+  border-width: 1px 0 0 0;
+  width: 132px;
+  height: 0px;
+  position: absolute;
+  left: 730px;
+  display: none;
+}
+
+.line-52 { top: 233px; }
+.line-53 { top: 290px; }
+.line-54 { top: 347px; }
+.line-55 { top: 404px; }
+.line-56 { top: 461px; }
+
+/* Линия 57: вертикальная линия для семантики, абсолютное позиционирование, поворот */
+.line-57 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 285px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 760px; /* Отступ слева */
+  top: 519px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(-90deg) scale(1, 1); /* Поворот и масштаб */
+  display: none; /* Скрыт по умолчанию */
+}
+
+/* Набор дополнительных Ссылки/ новых линий */
+.div52, .div53, .div54, .div55, .div56 {
+  color: #dcdcdc;
+  text-align: left;
+  font-family: "Cruinn";
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: absolute;
+  left: 770px;
+  width: auto;
+  height: 60px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.div52 { top: 306px; }
+.div53 { top: 363px; }
+.div54 { top: 420px; }
+.div55 { top: 477px; }
+.div56 { top: 534px; }
+
+.line-58, .line-59, .line-60, .line-61, .line-62 {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #dcdcdc;
+  border-width: 1px 0 0 0;
+  width: 132px;
+  height: 0px;
+  position: absolute;
+  left: 730px;
+  display: none;
+}
+
+.line-58 { top: 290px; }
+.line-59 { top: 347px; }
+.line-60 { top: 404px; }
+.line-61 { top: 461px; }
+.line-62 { top: 518px; }
+
+/* Линия 63: вертикальная линия для семантики, абсолютное позиционирование, поворот */
+.line-63 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 285px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 760px; /* Отступ слева */
+  top: 575px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(-90deg) scale(1, 1); /* Поворот и масштаб */
+  display: none; /* Скрыт по умолчанию */
+}
+
+/* Набор дополнительных Доступность/ новых линий */
+.div57, .div58, .div59, .div60, .div61 {
+  color: #dcdcdc;
+  text-align: left;
+  font-family: "Cruinn";
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: absolute;
+  left: 770px;
+  width: auto;
+  height: 60px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.div57 { top: 363px; }
+.div58 { top: 420px; }
+.div59 { top: 477px; }
+.div60 { top: 534px; }
+.div61 { top: 591px; }
+
+.line-64, .line-65, .line-66, .line-67, .line-68 {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #dcdcdc;
+  border-width: 1px 0 0 0;
+  width: 132px;
+  height: 0px;
+  position: absolute;
+  left: 730px;
+  display: none;
+}
+
+.line-64 { top: 347px; }
+.line-65 { top: 404px; }
+.line-66 { top: 461px; }
+.line-67 { top: 518px; }
+.line-68 { top: 575px; }
+
+/* Линия 69: вертикальная линия для семантики, абсолютное позиционирование, поворот */
+.line-69 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 285px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 760px; /* Отступ слева */
+  top: 632px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(-90deg) scale(1, 1); /* Поворот и масштаб */
+  display: none; /* Скрыт по умолчанию */
+}
+
+/* Набор дополнительных Оптимизация/ новых линий */
+.div62, .div63, .div64, .div65, .div66 {
+  color: #dcdcdc;
+  text-align: left;
+  font-family: "Cruinn";
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: absolute;
+  left: 770px;
+  width: auto;
+  height: 60px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.div62 { top: 420px; }
+.div63 { top: 477px; }
+.div64 { top: 534px; }
+.div65 { top: 591px; }
+.div66 { top: 648px; }
+
+.line-70, .line-71, .line-72, .line-73, .line-74 {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #dcdcdc;
+  border-width: 1px 0 0 0;
+  width: 132px;
+  height: 0px;
+  position: absolute;
+  left: 730px;
+  display: none;
+}
+
+.line-70 { top: 404px; }
+.line-71 { top: 461px; }
+.line-72 { top: 518px; }
+.line-73 { top: 575px; }
+.line-74 { top: 632px; }
+
+/* Линия 75: вертикальная линия для семантики, абсолютное позиционирование, поворот */
+.line-75 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 285px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 760px; /* Отступ слева */
+  top: 690px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(-90deg) scale(1, 1); /* Поворот и масштаб */
+  display: none; /* Скрыт по умолчанию */
+}
+
+/* Набор дополнительных Возможности/ новых линий */
+.div67, .div68, .div69, .div70, .div71 {
+  color: #dcdcdc;
+  text-align: left;
+  font-family: "Cruinn";
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: absolute;
+  left: 770px;
+  width: auto;
+  height: 60px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.div67 { top: 477px; }
+.div68 { top: 534px; }
+.div69 { top: 591px; }
+.div70 { top: 648px; }
+.div71 { top: 705px; }
+
+.line-76, .line-77, .line-78, .line-79, .line-80 {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #dcdcdc;
+  border-width: 1px 0 0 0;
+  width: 132px;
+  height: 0px;
+  position: absolute;
+  left: 730px;
+  display: none;
+}
+
+.line-76 { top: 461px; }
+.line-77 { top: 518px; }
+.line-78 { top: 575px; }
+.line-79 { top: 632px; }
+.line-80 { top: 689px; }
+
+/* Линия 81: вертикальная линия для семантики, абсолютное позиционирование, поворот */
+.line-81 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 285px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 760px; /* Отступ слева */
+  top: 747px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(-90deg) scale(1, 1); /* Поворот и масштаб */
+  display: none; /* Скрыт по умолчанию */
+}
+
+/* Набор дополнительных Инструменты/ новых линий */
+.div72, .div73, .div74, .div75, .div76 {
+  color: #dcdcdc;
+  text-align: left;
+  font-family: "Cruinn";
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: absolute;
+  left: 770px;
+  width: auto;
+  height: 60px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.div72 { top: 534px; }
+.div73 { top: 591px; }
+.div74 { top: 648px; }
+.div75 { top: 705px; }
+.div76 { top: 762px; }
+
+.line-82, .line-83, .line-84, .line-85, .line-86 {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #dcdcdc;
+  border-width: 1px 0 0 0;
+  width: 132px;
+  height: 0px;
+  position: absolute;
+  left: 730px;
+  display: none;
+}
+
+.line-82 { top: 518px; }
+.line-83 { top: 575px; }
+.line-84 { top: 632px; }
+.line-85 { top: 689px; }
+.line-86 { top: 746px; }
+
+/* Линия 87: вертикальная линия для семантики, абсолютное позиционирование, поворот */
+.line-87 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 285px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 760px; /* Отступ слева */
+  top: 803px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(-90deg) scale(1, 1); /* Поворот и масштаб */
+  display: none; /* Скрыт по умолчанию */
+}
+
+/* Набор дополнительных Совместимость/ новых линий */
+.div77, .div78, .div79, .div80, .div81 {
+  color: #dcdcdc;
+  text-align: left;
+  font-family: "Cruinn";
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: absolute;
+  left: 770px;
+  width: auto;
+  height: 60px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.div77 { top: 591px; }
+.div78 { top: 648px; }
+.div79 { top: 705px; }
+.div80 { top: 762px; }
+.div81 { top: 819px; }
+
+.line-88, .line-89, .line-90, .line-91, .line-92 {
+  margin-top: -1px;
+  border-style: solid;
+  border-color: #dcdcdc;
+  border-width: 1px 0 0 0;
+  width: 132px;
+  height: 0px;
+  position: absolute;
+  left: 730px;
+  display: none;
+}
+
+.line-88 { top: 575px; }
+.line-89 { top: 632px; }
+.line-90 { top: 689px; }
+.line-91 { top: 746px; }
+.line-92 { top: 803px; }
+
+/* Линия 93: вертикальная линия для семантики, абсолютное позиционирование, поворот */
+.line-93 {
+  margin-top: -1px; /* Смещение верхнего отступа */
+  border-style: solid; /* Сплошная граница */
+  border-color: #dcdcdc; /* Цвет границы */
+  border-width: 1px 0 0 0; /* Толщина границы (только верхняя) */
+  width: 285px; /* Ширина линии */
+  height: 0px; /* Высота линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 760px; /* Отступ слева */
+  top: 860px; /* Отступ сверху */
+  transform-origin: 0 0; /* Точка трансформации */
+  transform: rotate(-90deg) scale(1, 1); /* Поворот и масштаб */
+  display: none; /* Скрыт по умолчанию */
+}
+
+/* Текстовый блок Основы: светлый текст, выравнивание по левому краю, абсолютное позиционирование */
+.div {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 30px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 189px; /* Отступ слева */
+  top: 135px; /* Отступ сверху */
+  width: 140px; /* Ширина блока */
+  height: 60px; /* Высота блока */
+  cursor: pointer; /* Курсор указателя */
+  background: none; /* Без фона */
+  border: none; /* Без границы */
+  outline: none; /* Без контура */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.div:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+}
+
+/* Текстовый блок Мета: светлый текст, выравнивание по левому краю, абсолютное позиционирование */
+.div2 {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 30px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 189px; /* Отступ слева */
+  top: 192px; /* Отступ сверху */
+  width: 300px; /* Ширина блока */
+  height: 60px; /* Высота блока */
+  cursor: pointer; /* Курсор указателя */
+  background: none; /* Без фона */
+  border: none; /* Без границы */
+  outline: none; /* Без контура */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.div2:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+}
+
+/* Текстовый блок Семантика: светлый текст, выравнивание по левому краю, абсолютное позиционирование */
+.div3 {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 30px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 189px; /* Отступ слева */
+  top: 249px; /* Отступ сверху */
+  width: 190px; /* Ширина блока */
+  height: 60px; /* Высота блока */
+  cursor: pointer; /* Курсор указателя */
+  background: none; /* Без фона */
+  border: none; /* Без границы */
+  outline: none; /* Без контура */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.div3:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+}
+
+/* Текстовый блок Формы: светлый текст, выравнивание по левому краю, абсолютное позиционирование */
+.div4 {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 30px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 189px; /* Отступ слева */
+  top: 306px; /* Отступ сверху */
+  width: 390px; /* Ширина блока */
+  height: 60px; /* Высота блока */
+  cursor: pointer; /* Курсор указателя */
+  background: none; /* Без фона */
+  border: none; /* Без границы */
+  outline: none; /* Без контура */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.div4:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+}
+
+/* Текстовый блок Медиа: светлый текст, выравнивание по левому краю, абсолютное позиционирование */
+.div5 {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 30px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 189px; /* Отступ слева */
+  top: 363px; /* Отступ сверху */
+  width: 250px; /* Ширина блока */
+  height: 60px; /* Высота блока */
+  cursor: pointer; /* Курсор указателя */
+  background: none; /* Без фона */
+  border: none; /* Без границы */
+  outline: none; /* Без контура */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.div5:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+}
+
+/* Текстовый блок Таблицы: светлый текст, выравнивание по левому краю, абсолютное позиционирование */
+.div6 {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 30px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 189px; /* Отступ слева */
+  top: 420px; /* Отступ сверху */
+  width: 150px; /* Ширина блока */
+  height: 60px; /* Высота блока */
+  cursor: pointer; /* Курсор указателя */
+  background: none; /* Без фона */
+  border: none; /* Без границы */
+  outline: none; /* Без контура */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.div6:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+}
+
+
+/* Текстовый блок Списки: светлый текст, выравнивание по левому краю, абсолютное позиционирование */
+.div7 {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 30px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 189px; /* Отступ слева */
+  top: 477px; /* Отступ сверху */
+  width: 120px; /* Ширина блока */
+  height: 60px; /* Высота блока */
+  cursor: pointer; /* Курсор указателя */
+  background: none; /* Без фона */
+  border: none; /* Без границы */
+  outline: none; /* Без контура */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.div7:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+}
+
+/* Текстовый блок Ссылки: светлый текст, выравнивание по левому краю, абсолютное позиционирование */
+.div8 {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 30px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 189px; /* Отступ слева */
+  top: 534px; /* Отступ сверху */
+  width: 120px; /* Ширина блока */
+  height: 60px; /* Высота блока */
+  cursor: pointer; /* Курсор указателя */
+  background: none; /* Без фона */
+  border: none; /* Без границы */
+  outline: none; /* Без контура */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.div8:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+}
+
+/* Текстовый блок Доступность: светлый текст, выравнивание по левому краю, абсолютное позиционирование */
+.div9 {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 30px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 189px; /* Отступ слева */
+  top: 591px; /* Отступ сверху */
+  width: 200px; /* Ширина блока */
+  height: 60px; /* Высота блока */
+  cursor: pointer; /* Курсор указателя */
+  background: none; /* Без фона */
+  border: none; /* Без границы */
+  outline: none; /* Без контура */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.div9:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+}
+
+/* Текстовый блок Оптимизация: светлый текст, выравнивание по левому краю, абсолютное позиционирование */
+.seo {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 30px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 189px; /* Отступ слева */
+  top: 646px; /* Отступ сверху */
+  width: 330px; /* Ширина блока */
+  height: 60px; /* Высота блока */
+  cursor: pointer; /* Курсор указателя */
+  background: none; /* Без фона */
+  border: none; /* Без границы */
+  outline: none; /* Без контура */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.seo:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+}
+
+/* Текстовый блок Расшир: светлый текст, выравнивание по левому краю, абсолютное позиционирование */
+.div10 {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 30px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 189px; /* Отступ слева */
+  top: 704px; /* Отступ сверху */
+  width: 485px; /* Ширина блока */
+  height: 60px; /* Высота блока */
+  cursor: pointer; /* Курсор указателя */
+  background: none; /* Без фона */
+  border: none; /* Без границы */
+  outline: none; /* Без контура */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.div10:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+}
+
+/* Текстовый блок Инструменты: светлый текст, выравнивание по левому краю, абсолютное позиционирование */
+.div11 {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 30px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 189px; /* Отступ слева */
+  top: 760px; /* Отступ сверху */
+  width: 450px; /* Ширина блока */
+  height: 60px; /* Высота блока */
+  cursor: pointer; /* Курсор указателя */
+  background: none; /* Без фона */
+  border: none; /* Без границы */
+  outline: none; /* Без контура */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+.div11:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+}
+
+/* Текстовый блок Совместимость: светлый текст, выравнивание по левому краю, абсолютное позиционирование */
+.div12 {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 30px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 189px; /* Отступ слева */
+  top: 817px; /* Отступ сверху */
+  width: 497px; /* Ширина блока */
+  height: 60px; /* Высота блока */
+  cursor: pointer; /* Курсор указателя */
+  background: none; /* Без фона */
+  border: none; /* Без границы */
+  outline: none; /* Без контура */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.div12:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+}
+
+/* Текстовый блок Структура: светлый текст, выравнивание по левому краю, абсолютное позиционирование */
+.div13 {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 30px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 770px; /* Отступ слева */
+  top: 192px; /* Отступ сверху */
+  width: 500px; /* Ширина блока */
+  height: 60px; /* Высота блока */  display: none; /* Скрыт по умолчанию */}
+
+/* Текстовый блок Элементы: светлый текст, выравнивание по левому краю, абсолютное позиционирование */
+.div14 {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 30px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 770px; /* Отступ слева */
+  top: 249px; /* Отступ сверху */
+  width: 500px; /* Ширина блока */
+  height: 60px; /* Высота блока */   display: none; /* Скрыт по умолчанию */}
+
+/* Текстовый блок Атрибуты: светлый текст, выравнивание по левому краю, абсолютное позиционирование */
+.div15 {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 30px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 770px; /* Отступ слева */
+  top: 306px; /* Отступ сверху */
+  width: 167px; /* Ширина блока */
+  height: 60px; /* Высота блока */  display: none; /* Скрыт по умолчанию */}
+
+/* Текстовый блок Комментарии: светлый текст, выравнивание по левому краю, абсолютное позиционирование */
+.div16 {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 30px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 770px; /* Отступ слева */
+  top: 363px; /* Отступ сверху */
+  width: 216px; /* Ширина блока */
+  height: 60px; /* Высота блока */  display: none; /* Скрыт по умолчанию */}
+
+/* Текстовый блок Символы: светлый текст, выравнивание по левому краю, абсолютное позиционирование */
+.div17 {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: left; /* Выравнивание текста по левому краю */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 30px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 770px; /* Отступ слева */
+  top: 420px; /* Отступ сверху */
+  width: 500px; /* Ширина блока */
+  height: 60px; /* Высота блока */    display: none; /* Скрыт по умолчанию */}
+
+
+
+/* Прямоугольник 1: тёмный фон, пунктирная граница, скруглённые углы, флекс-контейнер */
+.rectangle-1 {
+  background: #1e1e1e; /* Цвет фона */
+  border-radius: 20px; /* Скругление углов */
+  border-style: dashed; /* Пунктирная граница */
+  border-color: #780002; /* Цвет границы */
+  border-width: 2px; /* Толщина границы */
+  width: 500px; /* Ширина блока */
+  height: 285px; /* Высота блока */
+  position: absolute; /* Абсолютное позиционирование */
+  right: 50px; /* Отступ справа */
+  top: 176px; /* Отступ снизу */
+  display: none; /* Скрыт по умолчанию */
+  flex-direction: column; /* Расположение по вертикали */
+  align-items: center; /* Центрирование по горизонтали */
+  justify-content: center; /* Центрирование по вертикали */
+  gap: 10px; /* Расстояние между элементами */
+  padding: 3px; /* Внутренний отступ контейнера */
+  overflow: hidden; /* Контент не выходит за пределы */
+}
+
+.quiz-1 {
+  background: #1e1e1e;
+  border-radius: 20px;
+  border-style: dashed;
+  border-color: #780002;
+  border-width: 2px;
+  width: 500px;
+  height: 285px;
+  position: absolute;
+  right: 50px;
+  top: 176px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 3px;
+  overflow: hidden;
+}
+
+#quiz-2 {
+  top: 233px;
+}
+
+#quiz-3 {
+  top: 290px;
+}
+
+#quiz-4 {
+  top: 347px;
+}
+
+#quiz-5 {
+  top: 404px;
+}
+
+#quiz-6 {
+  top: 461px;
+}
+
+#quiz-7 {
+  top: 233px;
+}
+
+#quiz-8 {
+  top: 290px;
+}
+
+#quiz-9 {
+  top: 347px;
+}
+
+#quiz-10 {
+  top: 404px;
+}
+
+#quiz-11 {
+  top: 461px;
+}
+
+#quiz-12 {
+  top: 518px;
+}
+
+#quiz-13 {
+  top: 575px;
+}
+
+.quiz-title {
+  color: #dcdcdc;
+  text-align: center;
+  font-family: "Cruinn";
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.quiz-progress {
+  color: #dcdcdc;
+  text-align: center;
+  font-family: "Cruinn";
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+.quiz-question
+ {
+  color: #dcdcdc;
+  text-align: center;
+  font-family: "Cruinn";
+  font-size: 16px;
+  font-weight: 400;
+ }
+
+
+.quiz-options,
+.quiz-result {
+  color: #dcdcdc;
+  text-align: center;
+  font-family: "Cruinn";
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.quiz-options {
+  white-space: pre-line;
+}
+
+.quiz-option-btn {
+  display: block;
+  width: 100%;
+  margin: 4px 0;
+  padding: 6px 10px;
+  border: 1px solid #780002;
+  border-radius: 8px;
+  background: #2a2a2a;
+  color: #dcdcdc;
+  font-family: "Cruinn";
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quiz-option-btn:hover {
+  background: #353535;
+}
+
+.quiz-option-btn.is-selected {
+  background: #780002;
+  border-color: #9a1114;
+}
+
+.quiz-input {
+  width: 280px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #780002;
+  background: #2a2a2a;
+  color: #dcdcdc;
+  font-family: "Cruinn";
+  font-size: 14px;
+  padding: 6px 10px;
+  outline: none;
+}
+
+/* Прямоугольники для тестов 2-13: одинаковый стиль, как rectangle-1 */
+.rectangle-2-test,
+.rectangle-3-test,
+.rectangle-4-test,
+.rectangle-5-test,
+.rectangle-6-test,
+.rectangle-7-test,
+.rectangle-8-test,
+.rectangle-9-test,
+.rectangle-10-test,
+.rectangle-11-test,
+.rectangle-12-test,
+.rectangle-13-test {
+  background: #1e1e1e; /* Цвет фона */
+  border-radius: 20px; /* Скругление углов */
+  border-style: dashed; /* Пунктирная граница */
+  border-color: #780002; /* Цвет границы */
+  border-width: 2px; /* Толщина границы */
+  width: 500px; /* Ширина блока */
+  height: 285px; /* Высота блока */
+  position: absolute; /* Абсолютное позиционирование */
+  right: 50px; /* Отступ справа */
+  top: 176px; /* Отступ снизу */
+  display: none; /* Скрыт по умолчанию */
+  flex-direction: column; /* Расположение по вертикали */
+  align-items: center; /* Центрирование по горизонтали */
+  justify-content: center; /* Центрирование по вертикали */
+  gap: 10px; /* Расстояние между элементами */
+  padding: 3px; /* Внутренний отступ контейнера */
+  overflow: hidden; /* Контент не выходит за пределы */
+}
+.rectangle-2-test { top: 233px; }
+.rectangle-3-test { top: 290px; }
+.rectangle-4-test { top: 347px; }
+.rectangle-5-test { top: 404px; }
+.rectangle-6-test { top: 461px; }
+.rectangle-7-test { top: 233px; }
+.rectangle-8-test { top: 290px; }
+.rectangle-9-test { top: 347px; }
+.rectangle-10-test { top: 404px; }
+.rectangle-11-test { top: 461px; }
+.rectangle-12-test { top: 518px; }
+.rectangle-13-test { top: 575px; }
+
+/* Прямоугольник 2: красный фон, скруглённые углы */
+.rectangle-2 {
+  border-radius: 10px; /* Скругление углов */
+  background: #780002; /* Цвет фона */
+  width: 270px; /* Ширина блока */
+  height: 60px; /* Высота блока */
+  display: flex; /* Flex-контейнер */
+  align-items: center; /* Центрирование по вертикали */
+  justify-content: center; /* Центрирование по горизонтали */
+  cursor: pointer; /* Курсор указателя */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.rectangle-2:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+  transform: scale(1.1); /* Легкое увеличение */
+}
+
+/* Текстовый блок Тест: светлый текст, центрирование */
+.html {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: center; /* Выравнивание текста по центру */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 28px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  width: auto; /* Ширина блока */
+  height: auto; /* Высота блока */
+}
+
+/* Текстовый блок 5 вопросов: светлый текст, центрирование */
+._5 {
+  color: #dcdcdc; /* Цвет текста */
+  text-align: center; /* Выравнивание текста по центру */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 16px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  width: 280px; /* Ширина блока */
+  height: 50px; /* Высота блока */
+}
+
+/* Текстовый блок Выход: белый текст, центрирование, абсолютное позиционирование */
+.div18 {
+  color: #ffffff; /* Цвет текста */
+  text-align: center; /* Выравнивание текста по центру */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 24px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  position: absolute; /* Абсолютное позиционирование */
+  right: 40px; /* Отступ справа */
+  top: 40px; /* Отступ сверху */
+  width: 82px; /* Ширина блока */
+  height: 23px; /* Высота блока */
+  cursor: pointer; /* Курсор указателя */
+  background: none; /* Без фона */
+  border: none; /* Без границы */
+  outline: none; /* Без контура */
+  transition: all 0.3s ease; /* Плавные переходы */
+  display: flex; /* Флекс-контейнер */
+  align-items: center; /* Центрирование по вертикали */
+  justify-content: center; /* Центрирование по горизонтали */
+}
+
+.div18:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+  transform: scale(1.1); /* Легкое увеличение */
+}
+
+/* Текстовый блок Аккаунт: белый текст, центрирование, абсолютное позиционирование */
+.div19 {
+  color: #ffffff; /* Цвет текста */
+  text-align: center; /* Выравнивание текста по центру */
+  font-family: "Cruinn"; /* Шрифт */
+  font-size: 24px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  position: absolute; /* Абсолютное позиционирование */
+  right: 102px; /* Отступ справа */
+  top: 40px; /* Отступ сверху */
+  width: 161px; /* Ширина блока */
+  height: 23px; /* Высота блока */
+  cursor: pointer; /* Курсор указателя */
+  background: none; /* Без фона */
+  border: none; /* Без границы */
+  outline: none; /* Без контура */
+  transition: all 0.3s ease; /* Плавные переходы */
+  display: flex; /* Флекс-контейнер */
+  align-items: center; /* Центрирование по вертикали */
+  justify-content: center; /* Центрирование по горизонтали */
+}
+
+.div19:hover {
+  opacity: 0.7; /* Прозрачность при наведении */
+  transform: scale(1.1); /* Легкое увеличение */
+}
+
+/* Текстовый блок Пройти: белый текст, центрирование, абсолютное позиционирование внутри прямоугольника */
+.div20 {
+  color: #ffffff; /* Цвет текста */
+  text-align: center; /* Выравнивание текста по центру */
+  font-family: "Dmitrieva Sp"; /* Шрифт */
+  font-size: 18px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+}
+
+/* Текстовый блок html: белый текст, центрирование, абсолютное позиционирование */
+.html2 {
+  color: #ffffff; /* Цвет текста */
+  text-align: center; /* Выравнивание текста по центру */
+  font-family: "Dmitrieva Sp"; /* Шрифт */
+  font-size: 48px; /* Размер шрифта */
+  font-weight: 400; /* Насыщенность шрифта */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 154px; /* Отступ слева */
+  top: 60px; /* Отступ сверху */
+  width: 141px; /* Ширина блока */
+  height: 36px; /* Высота блока */
+}
+
+.topic.completed,
+.topic.completed * {
+  color: #780002 !important;
+}
+
+.topic.locked,
+.topic.locked * {
+  opacity: 0.5 !important;
+  pointer-events: none;
+}
+
+.topic.unlocked,
+.topic.unlocked * {
+  opacity: 0.8 !important;
+}
