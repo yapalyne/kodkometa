@@ -26,6 +26,7 @@ app.use('/progress', progressRoutes);
 
 // Раздача фронтенда
 app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(path.join(__dirname, '../client/js')));
 
 // Главная страница сайта
 app.get('/', (req, res) => {
