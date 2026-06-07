@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const fs = require('fs');
 
 const db = require('./db');
 
@@ -25,28 +24,6 @@ app.use('/progress', progressRoutes);
 
 app.use(express.static(path.join(__dirname, '../client')));
 app.use(express.static(path.join(__dirname, '../client/js')));
-
-app.get('/init-db', async (req, res) => {
-    try {
-        const sql = fs.readFileSync(path.join(__dirname, 'kodkometa.sql'), 'utf8');
-        const statements = sql
-            .split(/;\s*\n/)
-            .map(s => s.trim())
-            .filter(s => s.length > 0 && !s.startsWith('--') && !s.startsWith('/*'));
-
-        for (const statement of statements) {
-            await new Promise((resolve) => {
-                db.query(statement, (err) => {
-                    if (err && !err.message.includes('GTID')) console.log('skip:', err.message);
-                    resolve();
-                });
-            });
-        }
-        res.send('DB initialized!');
-    } catch(e) {
-        res.status(500).send('Error: ' + e.message);
-    }
-});
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/js/home.html'));
