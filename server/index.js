@@ -38,3 +38,26 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server started on port ${PORT}`);
 });
+
+app.get('/init-db', async (req, res) => {
+    const fs = require('fs');
+    const path = require('path');
+    try {
+        const sql = fs.readFileSync(path.join(__dirname, 'kodkometa.sql'), 'utf8');
+        const statements = sql
+            .split(/;\s*\n/)
+            .map(s => s.trim())
+            .filter(s => s.length > 0 && !s.startsWith('--') && !s.startsWith('/*'));
+        for (const statement of statements) {
+            await new Promise((resolve) => {
+                db.query(statement, (err) => {
+                    if (err && !err.message.includes('GTID')) console.log('skip:', err.message);
+                    resolve();
+                });
+            });
+        }
+        res.send('DB initialized!');
+    } catch(e) {
+        res.status(500).send('Error: ' + e.message);
+    }
+});
