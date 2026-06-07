@@ -345,7 +345,7 @@ async function loadAccountProgress() {
   try {
 
   const response = await fetch(
-  `http://localhost:3000/progress/${userId}/html`
+  `https://kodkometa-yapalyne.amvera.io/progress/${userId}/html`
   );
 
     const progress = await response.json();
@@ -412,7 +412,7 @@ async function loadCssProgress() {
   try {
 
     const response = await fetch(
-      `http://localhost:3000/progress/${userId}/css`
+      `https://kodkometa-yapalyne.amvera.io/progress/${userId}/css`
     );
 
     const progress = await response.json();
@@ -462,7 +462,7 @@ async function loadJsProgress() {
   try {
 
     const response = await fetch(
-      `http://localhost:3000/progress/${userId}/js`
+      `https://kodkometa-yapalyne.amvera.io/progress/${userId}/js`
     );
 
     const progress = await response.json();
@@ -520,7 +520,7 @@ async function loadTsProgress() {
   try {
 
     const response = await fetch(
-      `http://localhost:3000/progress/${userId}/ts`
+      `https://kodkometa-yapalyne.amvera.io/progress/${userId}/ts`
     );
 
     const progress = await response.json();
@@ -579,7 +579,7 @@ async function loadReactProgress() {
   try {
 
     const response = await fetch(
-      `http://localhost:3000/progress/${userId}/react`
+      `https://kodkometa-yapalyne.amvera.io/progress/${userId}/react`
     );
 
     const progress =
@@ -639,7 +639,7 @@ async function loadVueProgress() {
   try {
 
     const response = await fetch(
-      `http://localhost:3000/progress/${userId}/vue`
+      `https://kodkometa-yapalyne.amvera.io/progress/${userId}/vue`
     );
 
     const progress =
@@ -699,7 +699,7 @@ async function loadAngularProgress() {
   try {
 
     const response = await fetch(
-      `http://localhost:3000/progress/${userId}/angular`
+      `https://kodkometa-yapalyne.amvera.io/progress/${userId}/angular`
     );
 
     const progress =
@@ -789,7 +789,7 @@ const responses = await Promise.all(
   courses.map(course =>
 
     fetch(
-      `http://localhost:3000/progress/${userId}/${course}`
+      `https://kodkometa-yapalyne.amvera.io/progress/${userId}/${course}`
     )
       .then(res => res.json())
 

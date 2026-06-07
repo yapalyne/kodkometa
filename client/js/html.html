@@ -3445,7 +3445,7 @@ async function loadProgress() {
   try {
 
     const response = await fetch(
-      `http://localhost:3000/progress/${userId}/html`
+      `https://kodkometa-yapalyne.amvera.io/progress/${userId}/html`
     );
 
     const progress = await response.json();
@@ -3502,7 +3502,7 @@ async function completeTopic(course, topicId) {
   try {
 
     await fetch(
-      'http://localhost:3000/progress/complete',
+      'https://kodkometa-yapalyne.amvera.io/progress/complete',
       {
         method: 'POST',
 
@@ -3557,7 +3557,7 @@ async function loadProgress() {
 
   const response =
     await fetch(
-      `http://localhost:3000/progress/${userId}/html`
+      `https://kodkometa-yapalyne.amvera.io/progress/${userId}/html`
     );
 
   const progress =

@@ -542,7 +542,7 @@ async function loadReactProgress() {
   try {
 
     const response = await fetch(
-      `http://localhost:3000/progress/${userId}/react`
+      `https://kodkometa-yapalyne.amvera.io/progress/${userId}/react`
     );
 
     const progress =
@@ -1713,7 +1713,7 @@ async function completeTopic(topicId) {
   try {
 
     await fetch(
-      'http://localhost:3000/progress/complete',
+      'https://kodkometa-yapalyne.amvera.io/progress/complete',
       {
 
         method: 'POST',

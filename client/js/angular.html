@@ -543,7 +543,7 @@ async function loadAngularProgress() {
   try {
 
     const response = await fetch(
-      `http://localhost:3000/progress/${userId}/angular`
+      `https://kodkometa-yapalyne.amvera.io/progress/${userId}/angular`
     );
 
     const progress =
@@ -1723,7 +1723,7 @@ async function completeTopic(topicId) {
   try {
 
     await fetch(
-      'http://localhost:3000/progress/complete',
+      'https://kodkometa-yapalyne.amvera.io/progress/complete',
       {
 
         method: 'POST',
