@@ -9,7 +9,12 @@ const progressRoutes = require('./routes/progress');
 
 const app = express();
 
-app.use(cors());
+// Healthcheck ДО всех middleware
+app.get('/healthz', (req, res) => {
+    res.status(200).send('ok');
+});
+
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
