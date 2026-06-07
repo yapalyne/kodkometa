@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 
 require('./db');
 
@@ -9,7 +10,7 @@ const progressRoutes = require('./routes/progress');
 
 const app = express();
 
-// Healthcheck ДО всех middleware
+// Healthcheck
 app.get('/healthz', (req, res) => {
     res.status(200).send('ok');
 });
@@ -18,12 +19,17 @@ app.use(cors({ origin: '*' }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// API
 app.use('/auth', authRoutes);
 app.use('/topics', topicsRoutes);
 app.use('/progress', progressRoutes);
 
+// Раздача фронтенда
+app.use(express.static(path.join(__dirname, '../client')));
+
+// Главная страница сайта
 app.get('/', (req, res) => {
-    res.send('Server works!');
+    res.sendFile(path.join(__dirname, '../client/js/home.html'));
 });
 
 app.get('/test', (req, res) => {
@@ -32,6 +38,6 @@ app.get('/test', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server started on port ${PORT}`);
 });
