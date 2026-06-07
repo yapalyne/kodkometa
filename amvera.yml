@@ -12,7 +12,7 @@ run:
   scriptName: null
   scriptArguments: null
   nodeArguments: null
-  command: cd server && npm install && npm start
+  command: cd server && npm start
   persistenceMount: /data
   containerPort: "80"
   servicePort: "80"
