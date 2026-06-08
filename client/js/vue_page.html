@@ -978,7 +978,7 @@ const quiz1Questions = [
 
             }
             if (isPassed) {
-              await completeTopic(66);
+              await completeTopic(66, 'vue');
             }
             if (quiz1Progress) {
               quiz1Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -1709,7 +1709,7 @@ const quizData = {
   ]
 };
 
-async function completeTopic(topicId) {
+async function completeTopic(topicId, course) {
 
   try {
 
@@ -1726,11 +1726,11 @@ async function completeTopic(topicId) {
 
         body: JSON.stringify({
 
-          userId: userId,
+          userId: Number(localStorage.getItem('userId')),
 
           topicId: topicId,
 
-          course: 'vue'
+          course: course
 
         })
 
@@ -1844,7 +1844,7 @@ async function completeTopic(topicId) {
                 localStorage.setItem(`quiz${quizNumber}BestScore`, score);
               }
               if (isPassed) {
-                await completeTopic(quizNumber + 65);
+                await completeTopic(quizNumber + 65, 'vue');
               }
               if (progress) progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
               if (question) question.textContent = 'Результат: ' + score + ' из ' + questions.length;

@@ -1452,7 +1452,7 @@ if (
         },
 
         body: JSON.stringify({
-          userId: Number(userId),
+          userId: Number(localStorage.getItem('userId')),
           topicId,
           course
 
@@ -1490,27 +1490,27 @@ async function loadJsCourseProgress() {
 
       if (!topicElement) return;
 
+      // очищаем старые классы
+      topicElement.classList.remove('locked', 'unlocked', 'completed');
+
       // завершена
       if (topic.completed) {
 
-        topicElement.style.color =
-          '#780002';
+        topicElement.classList.add('completed');
 
       }
 
       // открыта
       else if (topic.unlocked) {
 
-        topicElement.style.color =
-          '#d9d9d9';
+        topicElement.classList.add('unlocked');
 
       }
 
       // закрыта
       else {
 
-        topicElement.style.color =
-          '#3a3a3a';
+        topicElement.classList.add('locked');
 
       }
 
