@@ -1,7 +1,7 @@
 /* Общие кроссбраузерные стили */
 @font-face {
     font-family: 'Dmitrieva SP';
-    src: url('../fonts/DmitievaSP.otf') format('opentype');
+    src: url('../fonts/DmitrievaSP.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
