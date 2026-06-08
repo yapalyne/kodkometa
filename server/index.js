@@ -21,6 +21,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/auth', authRoutes);
 app.use('/topics', topicsRoutes);
 app.use('/progress', progressRoutes);
+app.get('/check-courses', (req, res) => {
+    db.query('DESCRIBE courses', (err, rows) => {
+        if (err) return res.status(500).send(err.message);
+        res.json(rows);
+    });
+});
 
 app.use(express.static(path.join(__dirname, '../client')));
 app.use(express.static(path.join(__dirname, '../client/js')));
