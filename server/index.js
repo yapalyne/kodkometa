@@ -22,6 +22,13 @@ app.use('/auth', authRoutes);
 app.use('/topics', topicsRoutes);
 app.use('/progress', progressRoutes);
 
+app.get('/check-topics-schema', async (req, res) => {
+    db.query('DESCRIBE topics', (err, rows) => {
+        if (err) return res.status(500).send(err.message);
+        res.json(rows);
+    });
+});
+
 app.get('/init-topics', async (req, res) => {
     const topics = [
         // CSS (course_id=2)
