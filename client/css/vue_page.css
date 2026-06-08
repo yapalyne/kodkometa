@@ -22,8 +22,6 @@ a { /* Стили для всех ссылок */
 /* Основной контейнер .desktop: тёмный фон, полный размер экрана, относительное позиционирование */
 .desktop {
   background: #1e1e1e;
-  width: 100vw;
-  height: 100vh;
   position: relative;
   overflow: hidden;
 }
