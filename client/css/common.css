@@ -1,4 +1,17 @@
 /* Общие кроссбраузерные стили */
+@font-face {
+    font-family: 'Dmitrieva SP';
+    src: url('../fonts/DmitievaSP.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cruinn';
+    src: url('../fonts/Cruinn Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 :root {
   --design-width: 1920px;
