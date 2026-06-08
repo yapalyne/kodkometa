@@ -21,11 +21,46 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/auth', authRoutes);
 app.use('/topics', topicsRoutes);
 app.use('/progress', progressRoutes);
-app.get('/check-courses', (req, res) => {
-    db.query('DESCRIBE courses', (err, rows) => {
-        if (err) return res.status(500).send(err.message);
-        res.json(rows);
-    });
+
+app.get('/fix-progress/:userId', async (req, res) => {
+    const { userId } = req.params;
+
+    try {
+        const topics = await new Promise((resolve, reject) => {
+            db.query('SELECT * FROM topics ORDER BY course_id, topic_order', (err, rows) => {
+                if (err) reject(err); else resolve(rows);
+            });
+        });
+
+        const courses = await new Promise((resolve, reject) => {
+            db.query('SELECT * FROM courses', (err, rows) => {
+                if (err) reject(err); else resolve(rows);
+            });
+        });
+
+        const courseMap = {};
+        for (const c of courses) {
+            courseMap[c.id] = c.title;
+        }
+
+        for (const topic of topics) {
+            const courseName = courseMap[topic.course_id];
+            const unlocked = topic.topic_order === 1 ? 1 : 0;
+
+            await new Promise((resolve, reject) => {
+                db.query(
+                    `INSERT IGNORE INTO user_progress (user_id, topic_id, course, completed, unlocked)
+                     VALUES (?, ?, ?, 0, ?)`,
+                    [userId, topic.id, courseName, unlocked],
+                    (err) => { if (err) reject(err); else resolve(); }
+                );
+            });
+        }
+
+        res.send(`Progress fixed for user ${userId}!`);
+    } catch (e) {
+        res.status(500).send(e.message);
+    }
 });
 
 app.use(express.static(path.join(__dirname, '../client')));
