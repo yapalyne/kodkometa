@@ -978,7 +978,7 @@ const quiz1Questions = [
 
             }
             if (isPassed) {
-              await completeTopic(2);
+              await completeTopic(79);
             }
             if (quiz1Progress) {
               quiz1Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -1853,7 +1853,7 @@ async function completeTopic(topicId) {
                 localStorage.setItem(`quiz${quizNumber}BestScore`, score);
               }
               if (isPassed) {
-                await completeTopic(quizNumber);
+                await completeTopic(quizNumber + 78);
               }
               if (progress) progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
               if (question) question.textContent = 'Результат: ' + score + ' из ' + questions.length;
