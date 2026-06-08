@@ -1426,9 +1426,9 @@ menuGroups.forEach((group, index) => {
               if (score > bestScore) {
                 localStorage.setItem(`quiz${quizNumber}BestScore`, score);
               }
-              if (isPassed) {
-                await completeTopic(quizNumber);
-              }
+            if (isPassed) {
+              await completeTopic(quizNumber + 13);
+            }
               if (progress) progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
               if (question) question.textContent = 'Результат: ' + score + ' из ' + questions.length;
               if (options) options.textContent = isPassed ? 'Вы ответили правильно на 3 и более вопросов.' : 'Для прохождения нужно минимум 3 правильных ответа.';
