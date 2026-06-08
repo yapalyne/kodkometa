@@ -1466,7 +1466,7 @@ menuGroups.forEach((group, index) => {
   try {
 
     await fetch(
-      'http://localhost:3000/progress/complete',
+      'http://kodkometa-yapalyne.amvera.io/progress/complete',
       {
         method: 'POST',
 
@@ -1501,7 +1501,7 @@ async function loadProgress() {
   try {
 
     const response = await fetch(
-      `http://localhost:3000/progress/${userId}/css`
+      `http://kodkometa-yapalyne.amvera.io/progress/${userId}/css`
     );
 
     const progress = await response.json();
@@ -1542,7 +1542,7 @@ async function applyLocks() {
   try {
 
     const response = await fetch(
-      `http://localhost:3000/progress/${userId}/css`
+      `http://kodkometa-yapalyne.amvera.io/progress/${userId}/css`
     );
 
     const progress = await response.json();
