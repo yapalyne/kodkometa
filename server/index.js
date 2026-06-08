@@ -21,12 +21,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/auth', authRoutes);
 app.use('/topics', topicsRoutes);
 app.use('/progress', progressRoutes);
-app.get('/check-topic-ids', (req, res) => {
-    db.query('SELECT id, course_id, title, topic_order FROM topics ORDER BY course_id, topic_order', (err, rows) => {
-        if (err) return res.status(500).send(err.message);
-        res.json(rows);
-    });
-});
 
 app.use(express.static(path.join(__dirname, '../client')));
 app.use(express.static(path.join(__dirname, '../client/js')));
