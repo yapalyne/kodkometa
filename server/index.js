@@ -126,7 +126,7 @@ app.get('/init-topics', async (req, res) => {
         for (const topic of topics) {
             await new Promise((resolve, reject) => {
                 db.query(
-                    'INSERT IGNORE INTO topics (course_id, name, topic_order) VALUES (?, ?, ?)',
+                    'INSERT IGNORE INTO topics (course_id, title, topic_order) VALUES (?, ?, ?)',
                     [topic.course_id, topic.name, topic.topic_order],
                     (err) => { if (err) reject(err); else resolve(); }
                 );
