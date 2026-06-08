@@ -702,24 +702,27 @@ function updateTopicLocks() {
             item.topic_id === topicId
         );
 
-      if (
-        topicData &&
-        !topicData.unlocked
-      ) {
+      topic.classList.remove('locked', 'unlocked', 'completed');
 
-        topic.style.opacity = '0.4';
+      if (topicData) {
 
-        topic.style.cursor =
-          'default';
+        if (topicData.completed) {
 
-      }
+          topic.classList.add('completed');
 
-      else {
+        }
 
-        topic.style.opacity = '1';
+        else if (topicData.unlocked) {
 
-        topic.style.cursor =
-          'pointer';
+          topic.classList.add('unlocked');
+
+        }
+
+        else {
+
+          topic.classList.add('locked');
+
+        }
 
       }
 
