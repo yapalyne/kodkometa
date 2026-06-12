@@ -1102,8 +1102,8 @@ loadAccount();
     const total = progress.length;
     const passed = progress.filter(item => item.completed).length;
     const percent = Math.round((passed / total) * 100);
-    const tests = progress.map(item => ({
-      name: htmlTopics[item.topic_id - 1] || `Тест ${item.topic_id || 1}`,
+    const tests = progress.map((item, index) => ({
+      name: getTopicName(htmlTopics, item, index),
       status: item.completed ? 'Пройдено' : 'Не пройдено',
       score: item.completed ? '100%' : '0%'
     }));
@@ -1137,11 +1137,9 @@ loadAccount();
     ? Math.round((passed / total) * 100)
     : 0;
 
-  const tests = progress.map(item => ({
+  const tests = progress.map((item, index) => ({
 
-    name:
-      cssTopics[item.topic_id - 1]
-      || `Тема ${item.topic_id}`,
+    name: getTopicName(cssTopics, item, index),
 
     status:
       item.completed
@@ -1195,11 +1193,9 @@ function createJsDetails(progress) {
       ? Math.round((passed / total) * 100)
       : 0;
 
-  const tests = progress.map(item => ({
+  const tests = progress.map((item, index) => ({
 
-    name:
-      jsTopics[item.topic_id - 1]
-      || `Тема ${item.topic_id}`,
+    name: getTopicName(jsTopics, item, index),
 
     status:
       item.completed
@@ -1253,11 +1249,9 @@ function createTsDetails(progress) {
       ? Math.round((passed / total) * 100)
       : 0;
 
-  const tests = progress.map(item => ({
+  const tests = progress.map((item, index) => ({
 
-    name:
-      tsTopics[item.topic_id - 1]
-      || `Тема ${item.topic_id}`,
+    name: getTopicName(tsTopics, item, index),
 
     status:
       item.completed
@@ -1313,11 +1307,9 @@ function createReactDetails(progress) {
         )
       : 0;
 
-  const tests = progress.map(item => ({
+  const tests = progress.map((item, index) => ({
 
-    name:
-      reactTopics[item.topic_id - 1]
-      || `Тема ${item.topic_id}`,
+    name: getTopicName(reactTopics, item, index),
 
     status:
       item.completed
@@ -1373,11 +1365,9 @@ function createVueDetails(progress) {
         )
       : 0;
 
-  const tests = progress.map(item => ({
+  const tests = progress.map((item, index) => ({
 
-    name:
-      vueTopics[item.topic_id - 1]
-      || `Тема ${item.topic_id}`,
+    name: getTopicName(vueTopics, item, index),
 
     status:
       item.completed
@@ -1433,11 +1423,9 @@ function createAngularDetails(progress) {
         )
       : 0;
 
-  const tests = progress.map(item => ({
+  const tests = progress.map((item, index) => ({
 
-    name:
-      angularTopics[item.topic_id - 1]
-      || `Тема ${item.topic_id}`,
+    name: getTopicName(angularTopics, item, index),
 
     status:
       item.completed
@@ -1463,6 +1451,12 @@ function createAngularDetails(progress) {
   };
 
 }
+
+function getTopicName(topics, item, index) {
+    const rawId = item.topic_id ?? item.id ?? (index + 1);
+    const idx = Number(rawId) - 1;
+    return topics[idx] || topics[index] || `Тема ${rawId}`;
+  }
 
   function hideModal() {
     modal.classList.remove('modal--visible');
