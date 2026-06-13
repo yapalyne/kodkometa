@@ -93,4 +93,23 @@ router.post('/complete', (req, res) => {
 
 });
 
+// ВРЕМЕННЫЙ РОУТ — УДАЛИТЬ ПОСЛЕ ИСПОЛЬЗОВАНИЯ
+router.get('/migrate-add-score', (req, res) => {
+
+    db.query(
+        `ALTER TABLE user_progress ADD COLUMN score INT DEFAULT 0`,
+        (err, result) => {
+
+            if (err) {
+                console.log(err);
+                return res.status(500).json({ error: err.message });
+            }
+
+            res.json({ message: 'Column score added successfully' });
+
+        }
+    );
+
+});
+
 module.exports = router;
