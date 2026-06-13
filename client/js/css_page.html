@@ -1601,16 +1601,22 @@ async function applyLocks() {
         topic.style.color = '#666';
         topic.style.cursor = 'default';
 
-        topic.addEventListener(
-          'click',
-          function(event){
+        if(!topic._lockHandler){
+
+          topic._lockHandler = function(event){
 
             event.preventDefault();
             event.stopPropagation();
 
-          },
-          true
-        );
+          };
+
+          topic.addEventListener(
+            'click',
+            topic._lockHandler,
+            true
+          );
+
+        }
 
       }
 
@@ -1619,6 +1625,18 @@ async function applyLocks() {
 
         topic.style.opacity = '1';
         topic.style.cursor = 'pointer';
+
+        if(topic._lockHandler){
+
+          topic.removeEventListener(
+            'click',
+            topic._lockHandler,
+            true
+          );
+
+          topic._lockHandler = null;
+
+        }
 
       }
 

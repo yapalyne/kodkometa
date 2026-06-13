@@ -724,6 +724,19 @@ function updateTopicLocks() {
 
       }
 
+      if (
+        topicData &&
+        topicData.completed == 1
+      ) {
+
+        topic.style.color = '#780002';
+
+      } else {
+
+        topic.style.color = '';
+
+      }
+
     });
 
 }
