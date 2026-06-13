@@ -907,8 +907,9 @@ if (
               );
 
             }
+            await saveScore(40, 'ts', quiz1Score);
+
             if (isPassed) {
-              await saveScore(40, 'ts', quiz1Score);
               await completeTopic(40, 'ts', quiz1Score);
             }
             if (quiz1Progress) {
@@ -1733,8 +1734,9 @@ if (
               if (score > bestScore) {
                 localStorage.setItem(`quiz${quizNumber}BestScore`, score);
               }
+              await saveScore(quizNumber + 39, 'ts', score);
+
               if (isPassed) {
-                await saveScore(quizNumber + 39, 'ts', score);
                 await completeTopic(quizNumber + 39, 'ts', score);
               }
               if (progress) progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';

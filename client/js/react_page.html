@@ -979,8 +979,9 @@ const quiz1Questions = [
               );
 
             }
+            await saveScore(53, quiz1Score);
+
             if (isPassed) {
-              await saveScore(53, quiz1Score);
               await completeTopic(53, quiz1Score);
             }
             if (quiz1Progress) {
@@ -1886,8 +1887,9 @@ async function completeTopic(topicId, score) {
               if (score > bestScore) {
                 localStorage.setItem(`quiz${quizNumber}BestScore`, score);
               }
+              await saveScore(quizNumber + 52, score);
+
               if (isPassed) {
-                await saveScore(quizNumber + 52, score);
                 await completeTopic(quizNumber + 52, score);
               }
               if (progress) progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
