@@ -879,7 +879,7 @@ menuGroups.forEach((group, index) => {
 
             }
             if (isPassed) {
-              await completeTopic('html', 1);
+              await completeTopic('html', 1, quiz1Score);
             }
             if (quiz1Progress) {
               quiz1Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -1090,7 +1090,7 @@ menuGroups.forEach((group, index) => {
 
               }
             if (isPassed) {
-              await completeTopic('html', 2);
+              await completeTopic('html', 1, quiz1Score);
             }
             if (quiz2Progress) {
               quiz2Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -1301,7 +1301,7 @@ menuGroups.forEach((group, index) => {
 
               }
             if (isPassed) {
-              await completeTopic('html', 3);
+              await completeTopic('html', 3, quiz3Score);
             }
             if (quiz3Progress) {
               quiz3Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -1512,7 +1512,7 @@ menuGroups.forEach((group, index) => {
 
             }
             if (isPassed) {
-              await completeTopic('html', 4);
+              await completeTopic('html', 4, quiz4Score);
             }
             if (quiz4Progress) {
               quiz4Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -1721,7 +1721,7 @@ menuGroups.forEach((group, index) => {
 
             }
             if (isPassed) {
-              await completeTopic('html', 5);
+              await completeTopic('html', 5, quiz5Score);
             }
             if (quiz5Progress) {
               quiz5Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -1959,7 +1959,7 @@ menuGroups.forEach((group, index) => {
 
             }
             if (isPassed) {
-              await completeTopic('html', 6);
+              await completeTopic('html', 6, quiz6Score);
             }
             if (quiz6Progress) {
               quiz6Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -2199,7 +2199,7 @@ menuGroups.forEach((group, index) => {
 
             }
             if (isPassed) {
-              await completeTopic('html', 7);
+              await completeTopic('html', 7, quiz7Score);
             }
             if (quiz7Progress) {
               quiz7Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -2408,7 +2408,7 @@ menuGroups.forEach((group, index) => {
 
             }
             if (isPassed) {
-              await completeTopic('html', 8);
+              await completeTopic('html', 8, quiz8Score);
             }
             if (quiz8Progress) {
               quiz8Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -2600,7 +2600,7 @@ menuGroups.forEach((group, index) => {
 
             }
             if (isPassed) {
-              await completeTopic('html', 9);
+              await completeTopic('html', 9, quiz9Score);
             }
             if (quiz9Progress) {
               quiz9Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -2818,7 +2818,7 @@ menuGroups.forEach((group, index) => {
               );
             }
             if (isPassed) {
-              await completeTopic('html', 10);
+              await completeTopic('html', 10, quiz10Score);
             }
             if (quiz10Progress) {
               quiz10Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -3007,7 +3007,7 @@ menuGroups.forEach((group, index) => {
               );
             }
             if (isPassed) {
-              await completeTopic('html', 11);
+              await completeTopic('html', 11, quiz11Score);
             }
             if (quiz11Progress) {
               quiz11Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -3225,7 +3225,7 @@ menuGroups.forEach((group, index) => {
               );
             }
             if (isPassed) {
-              await completeTopic('html', 12);
+              await completeTopic('html', 12, quiz12Score);
             }
             if (quiz12Progress) {
               quiz12Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -3414,7 +3414,7 @@ menuGroups.forEach((group, index) => {
               );
             }
             if (isPassed) {
-              await completeTopic('html', 13);
+              await completeTopic('html', 13, quiz13Score);
             }
             if (quiz13Progress) {
               quiz13Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -3496,7 +3496,7 @@ async function loadProgress() {
   }
 
 }
-async function completeTopic(course, topicId) {
+async function completeTopic(course, topicId, score) {
 
   const userId = localStorage.getItem('userId');
 
@@ -3514,7 +3514,8 @@ async function completeTopic(course, topicId) {
         body: JSON.stringify({
           userId: Number(userId),
           topicId,
-          course
+          course,
+          score
         })
       }
     );

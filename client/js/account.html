@@ -1105,7 +1105,7 @@ loadAccount();
     const tests = progress.map((item, index) => ({
       name: getTopicName(htmlTopics, item, index),
       status: item.completed ? 'Пройдено' : 'Не пройдено',
-      score: item.completed ? '100%' : '0%'
+      score: `${(item.score || 0) * 20}%`
     }));
 
     return {
@@ -1146,10 +1146,7 @@ loadAccount();
         ? 'Пройдено'
         : 'Не пройдено',
 
-    score:
-      item.completed
-        ? '100%'
-        : '0%'
+    score: `${(item.score || 0) * 20}%`
 
   }));
 
@@ -1202,10 +1199,7 @@ function createJsDetails(progress) {
         ? 'Пройдено'
         : 'Не пройдено',
 
-    score:
-      item.completed
-        ? '100%'
-        : '0%'
+    score: `${(item.score || 0) * 20}%`
 
   }));
 
@@ -1258,10 +1252,7 @@ function createTsDetails(progress) {
         ? 'Пройдено'
         : 'Не пройдено',
 
-    score:
-      item.completed
-        ? '100%'
-        : '0%'
+    score: `${(item.score || 0) * 20}%`
 
   }));
 
@@ -1316,10 +1307,7 @@ function createReactDetails(progress) {
         ? 'Пройдено'
         : 'Не пройдено',
 
-    score:
-      item.completed
-        ? '100%'
-        : '0%'
+    score: `${(item.score || 0) * 20}%`
 
   }));
 
@@ -1374,10 +1362,7 @@ function createVueDetails(progress) {
         ? 'Пройдено'
         : 'Не пройдено',
 
-    score:
-      item.completed
-        ? '100%'
-        : '0%'
+    score: `${(item.score || 0) * 20}%`
 
   }));
 
@@ -1432,10 +1417,7 @@ function createAngularDetails(progress) {
         ? 'Пройдено'
         : 'Не пройдено',
 
-    score:
-      item.completed
-        ? '100%'
-        : '0%'
+    score: `${(item.score || 0) * 20}%`
 
   }));
 

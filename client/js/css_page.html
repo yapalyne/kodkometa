@@ -902,7 +902,7 @@ menuGroups.forEach((group, index) => {
 
             }
             if (isPassed) {
-              await completeTopic(14);
+              await completeTopic(14, quiz1Score);
             }
             if (quiz1Progress) {
               quiz1Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -1427,7 +1427,7 @@ menuGroups.forEach((group, index) => {
                 localStorage.setItem(`quiz${quizNumber}BestScore`, score);
               }
             if (isPassed) {
-              await completeTopic(quizNumber + 13);
+              await completeTopic(quizNumber + 13, score);
             }
               if (progress) progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
               if (question) question.textContent = 'Результат: ' + score + ' из ' + questions.length;
@@ -1457,7 +1457,7 @@ menuGroups.forEach((group, index) => {
         createQuiz(i);
       }
 
-      async function completeTopic(topicId) {
+async function completeTopic(topicId, score) {
 
   const userId = localStorage.getItem('userId');
 
@@ -1477,7 +1477,8 @@ menuGroups.forEach((group, index) => {
         body: JSON.stringify({
           userId: Number(userId),
           topicId,
-          course
+          course,
+          score
         })
       }
     );

@@ -883,7 +883,7 @@ if (
 
             }
             if (isPassed) {
-              await completeTopic(27, 'js');
+              await completeTopic(27, 'js', quiz1Score);
             }
             if (quiz1Progress) {
               quiz1Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -1408,7 +1408,7 @@ if (
                 localStorage.setItem(`quiz${quizNumber}BestScore`, score);
               }
               if (isPassed) {
-                await completeTopic(quizNumber + 26, 'js');
+                await completeTopic(quizNumber + 26, 'js', score);
               }
               if (progress) progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
               if (question) question.textContent = 'Результат: ' + score + ' из ' + questions.length;
@@ -1438,7 +1438,7 @@ if (
         createQuiz(i);
       }
 
-      async function completeTopic(topicId, course) {
+    async function completeTopic(topicId, course, score) {
 
   try {
 
@@ -1454,12 +1454,14 @@ if (
         body: JSON.stringify({
           userId: Number(localStorage.getItem('userId')),
           topicId,
-          course
+          course,
+          score
 
         })
 
       }
     );
+
     await loadJsCourseProgress();
   }
 
