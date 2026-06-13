@@ -908,6 +908,7 @@ if (
 
             }
             if (isPassed) {
+              await saveScore(40, 'ts', quiz1Score);
               await completeTopic(40, 'ts', quiz1Score);
             }
             if (quiz1Progress) {
@@ -1733,6 +1734,7 @@ if (
                 localStorage.setItem(`quiz${quizNumber}BestScore`, score);
               }
               if (isPassed) {
+                await saveScore(quizNumber + 39, 'ts', score);
                 await completeTopic(quizNumber + 39, 'ts', score);
               }
               if (progress) progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -1762,6 +1764,46 @@ if (
       for (let i = 2; i <= 13; i++) {
         createQuiz(i);
       }
+
+async function saveScore(topicId, course, score) {
+
+  const userId =
+    localStorage.getItem('userId');
+
+  try {
+
+    await fetch(
+      'https://kodkometa-yapalyne.amvera.io/progress/score',
+      {
+
+        method: 'POST',
+
+        headers: {
+          'Content-Type': 'application/json'
+        },
+
+        body: JSON.stringify({
+
+          userId: Number(userId),
+
+          topicId: topicId,
+
+          course: course,
+
+          score: score
+
+        })
+
+      }
+    );
+
+  } catch(error) {
+
+    console.log('Ошибка сохранения score:', error);
+
+  }
+
+}
 
       async function completeTopic(topicId, course, score) {
 

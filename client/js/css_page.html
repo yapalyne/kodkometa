@@ -901,6 +901,8 @@ menuGroups.forEach((group, index) => {
               );
 
             }
+            await saveScore(14, quiz1Score);
+
             if (isPassed) {
               await completeTopic(14, quiz1Score);
             }
@@ -1426,6 +1428,8 @@ menuGroups.forEach((group, index) => {
               if (score > bestScore) {
                 localStorage.setItem(`quiz${quizNumber}BestScore`, score);
               }
+            await saveScore(quizNumber + 13, score);
+
             if (isPassed) {
               await completeTopic(quizNumber + 13, score);
             }
@@ -1456,6 +1460,40 @@ menuGroups.forEach((group, index) => {
       for (let i = 2; i <= 13; i++) {
         createQuiz(i);
       }
+
+async function saveScore(topicId, score) {
+
+  const userId = localStorage.getItem('userId');
+
+  const course = 'css';
+
+  try {
+
+    await fetch(
+      'https://kodkometa-yapalyne.amvera.io/progress/score',
+      {
+        method: 'POST',
+
+        headers: {
+          'Content-Type': 'application/json'
+        },
+
+        body: JSON.stringify({
+          userId: Number(userId),
+          topicId,
+          score,
+          course
+        })
+      }
+    );
+
+  } catch(error) {
+
+    console.log('Ошибка сохранения score:', error);
+
+  }
+
+}
 
 async function completeTopic(topicId, score) {
 

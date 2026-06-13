@@ -878,6 +878,8 @@ menuGroups.forEach((group, index) => {
               );
 
             }
+            await saveScore('html', 1, quiz1Score);
+
             if (isPassed) {
               await completeTopic('html', 1, quiz1Score);
             }
@@ -1089,8 +1091,10 @@ menuGroups.forEach((group, index) => {
                 );
 
               }
+            await saveScore('html', 2, quiz2Score);
+
             if (isPassed) {
-              await completeTopic('html', 1, quiz1Score);
+              await completeTopic('html', 2, quiz2Score);
             }
             if (quiz2Progress) {
               quiz2Progress.textContent = isPassed ? 'Тест пройден' : 'Тест не пройден';
@@ -1300,6 +1304,8 @@ menuGroups.forEach((group, index) => {
                 );
 
               }
+            await saveScore('html', 3, quiz3Score);
+
             if (isPassed) {
               await completeTopic('html', 3, quiz3Score);
             }
@@ -1511,6 +1517,8 @@ menuGroups.forEach((group, index) => {
               );
 
             }
+            await saveScore('html', 4, quiz4Score);
+
             if (isPassed) {
               await completeTopic('html', 4, quiz4Score);
             }
@@ -1720,6 +1728,8 @@ menuGroups.forEach((group, index) => {
               );
 
             }
+            await saveScore('html', 5, quiz5Score);
+
             if (isPassed) {
               await completeTopic('html', 5, quiz5Score);
             }
@@ -1958,6 +1968,8 @@ menuGroups.forEach((group, index) => {
               );
 
             }
+            await saveScore('html', 6, quiz6Score);
+
             if (isPassed) {
               await completeTopic('html', 6, quiz6Score);
             }
@@ -2198,6 +2210,8 @@ menuGroups.forEach((group, index) => {
               );
 
             }
+            await saveScore('html', 7, quiz7Score);
+
             if (isPassed) {
               await completeTopic('html', 7, quiz7Score);
             }
@@ -2407,6 +2421,8 @@ menuGroups.forEach((group, index) => {
               );
 
             }
+            await saveScore('html', 8, quiz8Score);
+
             if (isPassed) {
               await completeTopic('html', 8, quiz8Score);
             }
@@ -2599,6 +2615,8 @@ menuGroups.forEach((group, index) => {
               );
 
             }
+            await saveScore('html', 9, quiz9Score);
+
             if (isPassed) {
               await completeTopic('html', 9, quiz9Score);
             }
@@ -2817,6 +2835,8 @@ menuGroups.forEach((group, index) => {
                 quiz10Score
               );
             }
+            await saveScore('html', 10, quiz10Score);
+
             if (isPassed) {
               await completeTopic('html', 10, quiz10Score);
             }
@@ -3006,6 +3026,8 @@ menuGroups.forEach((group, index) => {
                 quiz11Score
               );
             }
+            await saveScore('html', 11, quiz11Score);
+
             if (isPassed) {
               await completeTopic('html', 11, quiz11Score);
             }
@@ -3224,6 +3246,8 @@ menuGroups.forEach((group, index) => {
                 quiz12Score
               );
             }
+            await saveScore('html', 12, quiz12Score);
+
             if (isPassed) {
               await completeTopic('html', 12, quiz12Score);
             }
@@ -3413,6 +3437,8 @@ menuGroups.forEach((group, index) => {
                 quiz13Score
               );
             }
+            await saveScore('html', 13, quiz13Score);
+
             if (isPassed) {
               await completeTopic('html', 13, quiz13Score);
             }
@@ -3496,6 +3522,39 @@ async function loadProgress() {
   }
 
 }
+
+async function saveScore(course, topicId, score) {
+
+  const userId = localStorage.getItem('userId');
+
+  try {
+
+    await fetch(
+      'https://kodkometa-yapalyne.amvera.io/progress/score',
+      {
+        method: 'POST',
+
+        headers: {
+          'Content-Type': 'application/json'
+        },
+
+        body: JSON.stringify({
+          userId: Number(userId),
+          topicId,
+          course,
+          score
+        })
+      }
+    );
+
+  } catch(error) {
+
+    console.log('Ошибка сохранения score:', error);
+
+  }
+
+}
+
 async function completeTopic(course, topicId, score) {
 
   const userId = localStorage.getItem('userId');

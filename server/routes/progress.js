@@ -95,4 +95,38 @@ router.post('/complete', (req, res) => {
 
 });
 
+// ======================
+// СОХРАНИТЬ SCORE (без изменения completed/unlocked)
+// ======================
+
+router.post('/score', (req, res) => {
+
+    const { userId, course } = req.body;
+
+    const topicId = Number(req.body.topicId);
+    const score = Number(req.body.score) || 0;
+
+    db.query(
+        `
+        UPDATE user_progress
+        SET score = ?
+        WHERE user_id = ?
+        AND topic_id = ?
+        AND course = ?
+        `,
+        [score, userId, topicId, course],
+        (err) => {
+
+            if(err){
+                console.log(err);
+                return res.status(500).json('Database error');
+            }
+
+            res.json({ message: 'Score saved' });
+
+        }
+    );
+
+});
+
 module.exports = router;
