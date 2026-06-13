@@ -44,17 +44,19 @@ router.post('/complete', (req, res) => {
     const { userId, course } = req.body;
 
     const topicId = Number(req.body.topicId);
+    const score = Number(req.body.score) || 0;
 
     db.query(
         `
         UPDATE user_progress
         SET completed = 1,
-        completed_at = NOW()
+        completed_at = NOW(),
+        score = ?
         WHERE user_id = ?
         AND topic_id = ?
         AND course = ?
         `,
-        [userId, topicId, course],
+        [score, userId, topicId, course],
         (err, result) => {
 
             if(err){
